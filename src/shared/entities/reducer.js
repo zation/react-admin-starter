@@ -6,7 +6,6 @@ import user from './reducers/user';
 import role from './reducers/role';
 import content from './reducers/content';
 import contentTag from './reducers/content-tag';
-import banner from './reducers/banner';
 import shopBanner from './reducers/shop-banner';
 import productCategory from './reducers/product-category';
 import product from './reducers/product';
@@ -21,7 +20,6 @@ export default {
     role,
     content,
     contentTag,
-    banner,
     shopBanner,
     productCategory,
     product,

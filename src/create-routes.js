@@ -9,9 +9,6 @@ import {
   readAll as readAllRoles,
 } from 'shared/entities/actions/role';
 import {
-  readAll as readAllBanners,
-} from 'shared/entities/actions/banner';
-import {
   readAll as readAllShopBanners,
 } from 'shared/entities/actions/shop-banner';
 import {
@@ -34,7 +31,6 @@ import createSystemRoutes from 'modules/system/create-routes';
 import createAuthRoutes from 'modules/auth/create-routes';
 import createArticleRoutes from 'modules/content/create-routes';
 import createAccountRoutes from 'modules/account/create-routes';
-import createAssetRoutes from 'modules/asset/create-routes';
 import createShopRoutes from 'modules/shop/create-routes';
 
 export default store => [
@@ -49,7 +45,6 @@ export default store => [
           dispatch(readAllUsers()),
           dispatch(readAllRoles()),
           dispatch(readAllContents()),
-          dispatch(readAllBanners()),
           dispatch(readAllShopBanners()),
           dispatch(readAllProductCategories()),
           dispatch(readAllProducts()),
@@ -64,7 +59,6 @@ export default store => [
       createSystemRoutes(store),
       createArticleRoutes(store),
       createAccountRoutes(store),
-      createAssetRoutes(store),
       createShopRoutes(store),
     ],
   }];

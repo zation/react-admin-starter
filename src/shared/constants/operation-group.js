@@ -10,7 +10,6 @@ import {
   MANAGE_ARTICLE,
   MANAGE_PROFILE,
   MANAGE_PASSWORD,
-  MANAGE_BANNER,
   MANAGE_SHOP_BANNER,
   MANAGE_PRODUCT_CATEGORY,
   MANAGE_PRODUCT,
@@ -21,14 +20,12 @@ import {
 export const SYSTEM = 'SYSTEM';
 export const ARTICLE = 'ARTICLE';
 export const ACCOUNT = 'ACCOUNT';
-export const ASSET = 'ASSET';
 export const SHOP = 'SHOP';
 
 const textMap = {
   [SYSTEM]: '系统管理',
   [ARTICLE]: '文章管理',
   [ACCOUNT]: '个人帐号管理',
-  [ASSET]: '网站管理',
   [SHOP]: '电商模块',
 };
 
@@ -40,9 +37,6 @@ const operationGroups = [{
 }, {
   group: ARTICLE,
   children: [CREATE_ARTICLE, MANAGE_ARTICLE],
-}, {
-  group: ASSET,
-  children: [MANAGE_BANNER],
 }, {
   group: SHOP,
   children: [
