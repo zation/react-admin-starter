@@ -17,7 +17,7 @@ export default history => {
   // eslint-disable-next-line no-undef
   if (DEBUG) {
     // eslint-disable-next-line global-require
-    const createLogger = require('redux-logger');
+    const { createLogger } = require('redux-logger');
 
     middlewares.push(createLogger({
       collapsed: true,

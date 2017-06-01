@@ -4,16 +4,14 @@ import ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
-import useBasename from 'history/lib/useBasename';
 
 import createStore from './create-store';
 import Root from './root';
 
 polyfill();
 
-const browserHistoryWithBasename = useBasename(() => browserHistory)({ basename: '/admin/' });
-const store = createStore(browserHistoryWithBasename);
-const history = syncHistoryWithStore(browserHistoryWithBasename, store);
+const store = createStore(browserHistory);
+const history = syncHistoryWithStore(browserHistory, store);
 
 // eslint-disable-next-line no-undef
 if (DEBUG && module.hot) {

@@ -1,7 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import qs from 'qs';
-import autoprefixer from 'autoprefixer';
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 const VERBOSE = false;
@@ -15,7 +13,10 @@ const plugins = [
     },
     DEBUG: JSON.stringify(DEBUG),
   }),
-  new webpack.optimize.CommonsChunkPlugin('vendor', '[name].js'),
+  new webpack.optimize.CommonsChunkPlugin({
+    name: 'vendor',
+    filename: '[name].js',
+  }),
   new webpack.optimize.LimitChunkCountPlugin({
     maxChunks: 1,
   }),
@@ -23,7 +24,6 @@ const plugins = [
 
 if (!DEBUG) {
   plugins.push(
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: VERBOSE,
@@ -32,31 +32,14 @@ if (!DEBUG) {
         comments: false,
       },
     }),
-    new webpack.optimize.AggressiveMergingPlugin(),
   );
 }
 
 if (DEBUG) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
   );
 }
-
-const lessLoader = qs.stringify({
-  sourceMap: DEBUG,
-});
-
-const cssLoaderWithModule = qs.stringify({
-  importLoaders: 1,
-  modules: true,
-  localIdentName: DEBUG ? '[name]_[local]--[hash:base64:5]' : '[hash:base64:5]',
-  sourceMap: DEBUG,
-});
-
-const cssLoaderWithoutModule = qs.stringify({
-  sourceMap: DEBUG,
-});
 
 module.exports = {
   entry: {
@@ -99,11 +82,9 @@ module.exports = {
   },
 
   cache: DEBUG,
-  debug: DEBUG,
-  devtool: DEBUG ? 'inline-source-map' : false,
+  devtool: DEBUG ? 'eval-source-map' : false,
 
   resolve: {
-    extensions: ['', '.js'],
     alias: {
       shared: path.resolve(__dirname, 'src/shared'),
       modules: path.resolve(__dirname, 'src/modules'),
@@ -111,53 +92,101 @@ module.exports = {
   },
 
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
-      loader: 'babel',
       exclude: [
         path.resolve(__dirname, 'node_modules'),
       ],
+      loader: 'babel-loader',
     }, {
       test: /\.less$/,
-      loader: `style!css?${cssLoaderWithoutModule}!postcss!less?${lessLoader}`,
       include: [
         path.resolve(__dirname, 'node_modules'),
       ],
+      use: [
+        'style-loader', {
+          loader: 'css-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'less-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        },
+      ],
     }, {
       test: /[^_]\.less$/,
-      loader: `style!css?${cssLoaderWithModule}!postcss!less?${lessLoader}`,
       exclude: [
         path.resolve(__dirname, 'node_modules'),
+      ],
+      use: [
+        'style-loader', {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            modules: true,
+            localIdentName: DEBUG ? '[name]_[local]--[hash:base64:5]' : '[hash:base64:5]',
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'less-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        },
       ],
     }, {
       test: /_\.less$/,
-      loader: `style!css?${cssLoaderWithoutModule}!postcss!less?${lessLoader}`,
       exclude: [
         path.resolve(__dirname, 'node_modules'),
       ],
+      use: [
+        'style-loader', {
+          loader: 'css-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        }, {
+          loader: 'less-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        },
+      ],
     }, {
       test: /\.css$/,
-      loader: `style!css?${cssLoaderWithoutModule}!postcss`,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: DEBUG,
+          },
+        },
+        'postcss-loader',
+      ],
     }, {
       test: /\.(png|jpg|jpeg|woff|eot|ttf|woff2|svg)/,
       loader: DEBUG ? 'url-loader' : 'file-loader',
     }],
   },
-
-  postcss: () => [
-    autoprefixer({
-      browsers: [
-        'ie_mob >= 9',
-        'ff >= 30',
-        'chrome >= 34',
-        'safari >= 7',
-        'opera >= 23',
-        'ios >= 7',
-        'android >= 2.3',
-        'bb >= 10',
-      ],
-    }),
-  ],
 
   plugins,
 
