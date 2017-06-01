@@ -68,10 +68,10 @@ export default compose(
       layout={layout}
     />
     <Field
-      name="contentImages"
-      label="图集"
-      component={MultipleUploader}
-      accept="image/*"
+      name="detail"
+      label="Detail"
+      component={Input}
+      type="textarea"
       required
       validate={required}
       layout={layout}

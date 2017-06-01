@@ -11,7 +11,7 @@ export default (state, { params: { productId } }) => {
       'name',
       'cover',
       'images',
-      'contentImages',
+      'detail',
       'price',
       'originalPrice',
       'inventory',

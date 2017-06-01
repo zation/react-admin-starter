@@ -14,17 +14,12 @@ export default (state) => {
   const products = flow(
     getEntityArray('product'),
     reject(propEq('status', DELETED)),
-    map(product => {
-      const { productCategory, paintingMaterial } = product;
-
-      return {
-        ...product,
-        category: productCategory
-          ? getEntity(`productCategory.${productCategory.id}.name`)(state)
-          : prop('category')(paintingMaterial),
-        type: prop('type')(paintingMaterial) || '图书',
-      };
-    }),
+    map(product => ({
+      ...product,
+      category: getEntity(
+        `productCategory.${prop('productCategory.id', product)}.name`,
+      )(state),
+    })),
   )(state);
 
   return {

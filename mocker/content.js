@@ -22,7 +22,7 @@ const getContent = values => ({
   title: lorem.words(),
   author: name.findName(),
   cover: replace('/640/480/', '/900/450/')(image.image()),
-  detail: `<p>${lorem.paragraph()}</p><p>${lorem.paragraph()}</p><p><img src="${image.image()}" /></p>`,
+  detail: lorem.paragraph(),
   viewCount: random.number(),
   favoriteUserIds: getRandomUserIds(),
   bookmarkUserIds: getRandomUserIds(),

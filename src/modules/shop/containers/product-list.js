@@ -39,7 +39,7 @@ export default compose(
 
     <div style={{ marginBottom: -30 }}>
       <Button type="primary" size="large">
-        <Link to="/shop/product/create/book">Create Product</Link>
+        <Link to="/shop/product/create">Create Product</Link>
       </Button>
     </div>
     <List

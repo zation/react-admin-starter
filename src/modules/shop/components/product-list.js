@@ -2,7 +2,6 @@ import React, { PropTypes } from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Table, Popconfirm, Switch } from 'antd';
 import { Link } from 'react-router';
-import { prop } from 'lodash/fp';
 
 import Search, { searchComposer, searchDataSource } from 'shared/components/search';
 import Image from 'shared/components/image';
