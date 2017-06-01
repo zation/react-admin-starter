@@ -11,7 +11,6 @@ import CouponEditor from './containers/coupon-editor';
 import OrderList from './containers/order-list';
 import OrderDetail from './containers/order-detail';
 import OrderEditor from './containers/order-editor';
-import ShippingFeeEditor from './containers/shipping-fee-editor';
 
 export default () => ({
   path: 'shop',
@@ -27,9 +26,6 @@ export default () => ({
       path: 'edit/:order',
       component: ShopBannerEditor,
     }],
-  }, {
-    path: 'shipping-fee',
-    component: ShippingFeeEditor,
   }, {
     path: 'category/list',
     component: CategoryList,

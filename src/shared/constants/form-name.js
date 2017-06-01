@@ -10,4 +10,3 @@ export const PRODUCT_CATEGORY = 'PRODUCT_CATEGORY';
 export const PRODUCT = 'PRODUCT';
 export const COUPON = 'COUPON';
 export const SHIPPING = 'SHIPPING';
-export const SHIPPING_FEE = 'SHIPPING_FEE';

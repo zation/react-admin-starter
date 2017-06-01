@@ -8,7 +8,6 @@ import content from './reducers/content';
 import contentTag from './reducers/content-tag';
 import banner from './reducers/banner';
 import shopBanner from './reducers/shop-banner';
-import shippingFee from './reducers/shipping-fee';
 import productCategory from './reducers/product-category';
 import product from './reducers/product';
 import coupon from './reducers/coupon';
@@ -24,7 +23,6 @@ export default {
     contentTag,
     banner,
     shopBanner,
-    shippingFee,
     productCategory,
     product,
     coupon,

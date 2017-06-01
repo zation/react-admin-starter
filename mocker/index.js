@@ -16,7 +16,6 @@ import coupon from './coupon';
 import order from './order';
 import shoppingCart from './shopping-cart';
 import shopBanner from './shop-banner';
-import shippingFee from './shipping-fee';
 
 faker.locale = 'zh_CN';
 
@@ -44,7 +43,6 @@ coupon(router);
 order(router);
 shoppingCart(router);
 shopBanner(router);
-shippingFee(router);
 app.use(router);
 
 app.listen(9001, () => {

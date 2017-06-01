@@ -15,9 +15,6 @@ import {
   readAll as readAllShopBanners,
 } from 'shared/entities/actions/shop-banner';
 import {
-  readOne as readShippingFee,
-} from 'shared/entities/actions/shipping-fee';
-import {
   readAll as readAllProductCategories,
 } from 'shared/entities/actions/product-category';
 import {
@@ -54,7 +51,6 @@ export default store => [
           dispatch(readAllContents()),
           dispatch(readAllBanners()),
           dispatch(readAllShopBanners()),
-          dispatch(readShippingFee()),
           dispatch(readAllProductCategories()),
           dispatch(readAllProducts()),
           dispatch(readAllCoupons()),
