@@ -80,7 +80,7 @@ export default compose(
       label="标签"
       component={Select}
       options={contentTagOptions}
-      tags
+      mode="tags"
       layout={layout}
     />
     <Field

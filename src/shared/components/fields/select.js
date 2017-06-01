@@ -23,20 +23,18 @@ export default compose(
     required: PropTypes.bool,
     disabled: PropTypes.bool,
     options: PropTypes.array.isRequired,
-    multiple: PropTypes.bool,
-    tags: PropTypes.bool,
+    mode: PropTypes.string,
   }),
 )(({
-    input,
-    meta: { touched, error },
-    layout,
-    label,
-    required,
-    disabled,
-    options,
-    multiple,
-    tags,
-  }) =>
+  input,
+  meta: { touched, error },
+  layout,
+  label,
+  required,
+  disabled,
+  options,
+  mode,
+}) =>
   (
     <Item
       {...layout}
@@ -49,8 +47,7 @@ export default compose(
       <Select
         disabled={disabled}
         {...input}
-        multiple={multiple}
-        tags={tags}
+        mode={mode}
       >
         {map(({ children, group, text, value }) => {
           if (group) {

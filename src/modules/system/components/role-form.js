@@ -51,7 +51,7 @@ export default compose(
       options={operationGroupOptions}
       required
       validate={required}
-      multiple
+      mode="multiple"
       layout={layout}
     />
 
