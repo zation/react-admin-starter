@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { Message } from 'antd';
 
 import { update as updateContentAction } from 'shared/entities/actions/content';
-import Form from '../components/article-form';
-import selector from './article-editor-selector';
+import Form from '../components/content-form';
+import selector from './content-editor-selector';
 
 export default compose(
   connect(selector, {

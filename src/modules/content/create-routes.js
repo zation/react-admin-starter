@@ -1,20 +1,17 @@
-import ArticleList from './containers/article-list';
-import ArticleCreator from './containers/article-creator';
-import ArticleEditor from './containers/article-editor';
+import ContentList from './containers/content-list';
+import ContentCreator from './containers/content-creator';
+import ContentEditor from './containers/content-editor';
 
 export default () => ({
   path: 'content',
   childRoutes: [{
-    path: 'article',
-    childRoutes: [{
-      path: 'list',
-      component: ArticleList,
-    }, {
-      path: 'create',
-      component: ArticleCreator,
-    }, {
-      path: 'edit/:contentId',
-      component: ArticleEditor,
-    }],
+    path: 'list',
+    component: ContentList,
+  }, {
+    path: 'create',
+    component: ContentCreator,
+  }, {
+    path: 'edit/:contentId',
+    component: ContentEditor,
   }],
 });

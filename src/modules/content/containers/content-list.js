@@ -7,8 +7,8 @@ import { Link } from 'react-router';
 import { remove as removeContentAction, update as updateContentAction } from 'shared/entities/actions/content';
 import { PUBLISHED, DRAFT } from 'shared/constants/content-status';
 import Stats from 'shared/components/stats';
-import List from '../components/article-list';
-import selector from './article-list-selector';
+import List from '../components/content-list';
+import selector from './content-list-selector';
 
 export default compose(
   setDisplayName(__filename),
@@ -36,7 +36,7 @@ export default compose(
 
     <div style={{ marginBottom: -30 }}>
       <Button type="primary" size="large">
-        <Link to="/content/article/create">Create Content</Link>
+        <Link to="/content/create">Create Content</Link>
       </Button>
     </div>
     <List

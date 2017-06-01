@@ -29,7 +29,7 @@ import Profile from 'modules/account/containers/profile';
 
 import createSystemRoutes from 'modules/system/create-routes';
 import createAuthRoutes from 'modules/auth/create-routes';
-import createArticleRoutes from 'modules/content/create-routes';
+import createContentRoutes from 'modules/content/create-routes';
 import createAccountRoutes from 'modules/account/create-routes';
 import createShopRoutes from 'modules/shop/create-routes';
 
@@ -57,7 +57,7 @@ export default store => [
     },
     childRoutes: [
       createSystemRoutes(store),
-      createArticleRoutes(store),
+      createContentRoutes(store),
       createAccountRoutes(store),
       createShopRoutes(store),
     ],

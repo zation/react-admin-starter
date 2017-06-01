@@ -6,8 +6,8 @@ import {
   MANAGE_ADMIN,
   MANAGE_CUSTOMER,
   MANAGE_ROLE,
-  CREATE_ARTICLE,
-  MANAGE_ARTICLE,
+  CREATE_CONTENT,
+  MANAGE_CONTENT,
   MANAGE_PROFILE,
   MANAGE_PASSWORD,
   MANAGE_SHOP_BANNER,
@@ -18,13 +18,13 @@ import {
 } from './operation';
 
 export const SYSTEM = 'SYSTEM';
-export const ARTICLE = 'ARTICLE';
+export const CONTENT = 'CONTENT';
 export const ACCOUNT = 'ACCOUNT';
 export const SHOP = 'SHOP';
 
 const textMap = {
   [SYSTEM]: '系统管理',
-  [ARTICLE]: '文章管理',
+  [CONTENT]: 'Content',
   [ACCOUNT]: '个人帐号管理',
   [SHOP]: '电商模块',
 };
@@ -35,8 +35,8 @@ const operationGroups = [{
   group: SYSTEM,
   children: [MANAGE_ADMIN, MANAGE_CUSTOMER, MANAGE_ROLE],
 }, {
-  group: ARTICLE,
-  children: [CREATE_ARTICLE, MANAGE_ARTICLE],
+  group: CONTENT,
+  children: [CREATE_CONTENT, MANAGE_CONTENT],
 }, {
   group: SHOP,
   children: [

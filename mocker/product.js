@@ -28,7 +28,7 @@ const getProduct = values => {
 export const products = map(getProduct)(range(1, 100));
 
 export default router => {
-  router.get('/product/all', (response) => {
+  router.get('/product/all', (request, response) => {
     response.status(200).send(products);
   });
 

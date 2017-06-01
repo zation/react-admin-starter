@@ -78,7 +78,7 @@ export default compose(
             预览
           </a>
           &nbsp;&nbsp;
-          <Link to={`/content/article/edit/${id}`}>编辑</Link>
+          <Link to={`/content/edit/${id}`}>编辑</Link>
           &nbsp;&nbsp;
           <Popconfirm
             title="确定删除该文章吗？"

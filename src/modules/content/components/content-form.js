@@ -4,7 +4,7 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 import { Link } from 'react-router';
 
-import { ARTICLE } from 'shared/constants/form-name';
+import { CONTENT } from 'shared/constants/form-name';
 import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import RadioGroup from 'shared/components/fields/radio-group';
@@ -31,7 +31,7 @@ export default compose(
   }),
   setDisplayName(__filename),
   reduxForm({
-    form: ARTICLE,
+    form: CONTENT,
   }),
 )(({ onSubmit, handleSubmit, submitting, contentTagOptions }) => (
   <Form
@@ -114,7 +114,7 @@ export default compose(
       <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to="/content/article/list">返回列表</Link>
+        <Link to="/content/list">返回列表</Link>
       </Button>
     </Item>
   </Form>

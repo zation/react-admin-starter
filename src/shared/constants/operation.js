@@ -3,8 +3,8 @@ import { keys } from 'lodash/fp';
 export const MANAGE_ADMIN = 'MANAGE_ADMIN';
 export const MANAGE_CUSTOMER = 'MANAGE_CUSTOMER';
 export const MANAGE_ROLE = 'MANAGE_ROLE';
-export const CREATE_ARTICLE = 'CREATE_ARTICLE';
-export const MANAGE_ARTICLE = 'MANAGE_ARTICLE';
+export const CREATE_CONTENT = 'CREATE_CONTENT';
+export const MANAGE_CONTENT = 'MANAGE_CONTENT';
 export const MANAGE_PROFILE = 'MANAGE_PROFILE';
 export const MANAGE_PASSWORD = 'MANAGE_PASSWORD';
 export const MANAGE_SHOP_BANNER = 'MANAGE_SHOP_BANNER';
@@ -17,8 +17,8 @@ const textMap = {
   [MANAGE_ADMIN]: '后台帐号管理',
   [MANAGE_CUSTOMER]: '用户管理',
   [MANAGE_ROLE]: '权限管理',
-  [CREATE_ARTICLE]: '新建文章',
-  [MANAGE_ARTICLE]: '文章列表',
+  [CREATE_CONTENT]: 'Create Content',
+  [MANAGE_CONTENT]: 'Content List',
   [MANAGE_PROFILE]: '编辑帐号信息',
   [MANAGE_PASSWORD]: '修改密码',
   [MANAGE_SHOP_BANNER]: '横幅设置',
@@ -32,8 +32,8 @@ const linkMap = {
   [MANAGE_ADMIN]: 'system/admin/list',
   [MANAGE_CUSTOMER]: 'system/customer/list',
   [MANAGE_ROLE]: 'system/role/list',
-  [CREATE_ARTICLE]: 'content/article/create',
-  [MANAGE_ARTICLE]: 'content/article/list',
+  [CREATE_CONTENT]: 'content/create',
+  [MANAGE_CONTENT]: 'content/list',
   [MANAGE_PROFILE]: 'account/profile',
   [MANAGE_PASSWORD]: 'account/password',
   [MANAGE_SHOP_BANNER]: 'shop/banner/list',
