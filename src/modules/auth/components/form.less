@@ -1,0 +1,21 @@
+@import '../../../shared/styles/variables';
+
+.Root {
+  background: #F9F9F9;
+  padding: 60px 0 40px;
+  border-radius: 4px;
+  width: 600px;
+  border: 1px solid @border-color-base;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-device-width: 800px) {
+  .Root {
+    width: auto;
+    padding: 30px 0 10px;
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../shared/styles/variables';
+@import '../../../shared/styles/mixins';
+
+.Root {
+  height: 100%;
+}
+
+.Container {
+  padding: 30px;
+  min-height: 700px;
+}
+
+.Content {
+  background: white;
+  height: 100%;
+  padding: 20px;
+}
+
+.Header {
+  .clearfix();
+  border-bottom: 1px solid @border-color-base;
+
+  .Title {
+    font-size: 20px;
+  }
+}
+
+.Footer {
+  background: white;
+  border-top: 1px solid @border-color-base;
+  text-align: center;
+}

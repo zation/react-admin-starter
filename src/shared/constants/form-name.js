@@ -1,0 +1,13 @@
+export const ROLE = 'ROLE';
+export const ADMIN = 'ADMIN';
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+export const ARTICLE = 'ARTICLE';
+export const PROFILE = 'PROFILE';
+export const PASSWORD = 'PASSWORD';
+export const BANNER = 'BANNER';
+export const PRODUCT_CATEGORY = 'PRODUCT_CATEGORY';
+export const PRODUCT = 'PRODUCT';
+export const COUPON = 'COUPON';
+export const SHIPPING = 'SHIPPING';
+export const SHIPPING_FEE = 'SHIPPING_FEE';

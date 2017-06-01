@@ -1,0 +1,22 @@
+stages:
+  - build
+  - production
+
+job_build:
+  stage: build
+  tags:
+    - ansible
+  script:
+    - ansible-playbook -i ./ansible/hosts/production.yml --extra-vars "version=$CI_BUILD_TAG" ./ansible/build.yml
+  only:
+    - tags
+
+job_production:
+  stage: production
+  tags:
+      - ansible
+  script:
+    - ansible-playbook -i ./ansible/hosts/production.yml --extra-vars "version=$CI_BUILD_TAG" ./ansible/deploy.yml
+  only:
+    - tags
+  when: on_success

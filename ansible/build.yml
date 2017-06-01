@@ -1,0 +1,31 @@
+- hosts: target
+  remote_user: '{{user}}'
+  vars:
+    repository_name: registry-vpc.cn-hangzhou.aliyuncs.com/artwater/admin-web
+    image_name: '{{repository_name}}:{{version}}'
+    container_name: admin-web
+
+  tasks:
+    - name: pull code
+      command: git pull
+      args:
+        chdir: '{{dir}}'
+
+    - name: install dependencies
+      command: npm i --registry=https://registry.npm.taobao.org
+      args:
+        chdir: '{{dir}}'
+
+    - name: build artifacts
+      shell: npm run build
+      args:
+        chdir: '{{dir}}'
+
+    - name: build docker image
+      command: docker build -t {{image_name}} {{dir}}
+
+    - name: push docker image
+      command: docker push {{image_name}}
+
+    - name: remove docker image
+      command: docker rmi {{image_name}}

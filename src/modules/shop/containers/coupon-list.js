@@ -1,0 +1,54 @@
+import React from 'react';
+import { compose, setDisplayName, withHandlers } from 'recompose';
+import { connect } from 'react-redux';
+import { Button, Message } from 'antd';
+import { Link } from 'react-router';
+
+import { FIXED, PERCENTAGE } from 'shared/constants/coupon-type';
+import {
+  activate as activateCouponAction,
+  deactivate as deactivateCouponAction,
+  readUserHistory as readUserHistoryAction,
+} from 'shared/entities/actions/coupon';
+import Stats from 'shared/components/stats';
+import selector from './coupon-list-selector';
+import List from '../components/coupon-list';
+
+export default compose(
+  setDisplayName(__filename),
+  connect(selector, {
+    activateCoupon: activateCouponAction,
+    deactivateCoupon: deactivateCouponAction,
+    readUserHistory: readUserHistoryAction,
+  }),
+  withHandlers({
+    activateCoupon: ({ activateCoupon }) => ({ id }) => () =>
+      activateCoupon({ id }).then(() => {
+        Message.success('已开启激活');
+      }),
+    deactivateCoupon: ({ deactivateCoupon }) => ({ id }) => () =>
+      deactivateCoupon({ id }).then(() => {
+        Message.success('已禁止激活');
+      }),
+    readUserHistory: ({ readUserHistory }) => ({ id }) =>
+      readUserHistory({ id }),
+  }),
+)(({ coupons, activateCoupon, deactivateCoupon, readUserHistory, statsItems }) => (
+  <div>
+    <Stats items={statsItems} />
+    <div style={{ marginBottom: -30 }}>
+      <Button type="primary" size="large">
+        <Link to={`/shop/coupon/create/${FIXED}`}>创建满减礼卷</Link>
+      </Button>&nbsp;&nbsp;
+      <Button type="primary" size="large">
+        <Link to={`/shop/coupon/create/${PERCENTAGE}`}>创建折扣礼卷</Link>
+      </Button>
+    </div>
+    <List
+      coupons={coupons}
+      activateCoupon={activateCoupon}
+      deactivateCoupon={deactivateCoupon}
+      readUserHistory={readUserHistory}
+    />
+  </div>
+));

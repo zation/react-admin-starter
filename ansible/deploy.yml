@@ -1,0 +1,21 @@
+- hosts: target
+  remote_user: '{{user}}'
+  vars:
+    repository_name: registry-vpc.cn-hangzhou.aliyuncs.com/artwater/admin-web
+    image_name: '{{repository_name}}:{{version}}'
+    container_name: admin-web
+
+  tasks:
+    - name: stop container
+      command: docker stop {{container_name}}
+      ignore_errors: yes
+
+    - name: remove container
+      command: docker rm {{container_name}}
+      ignore_errors: yes
+
+    - name: pull image
+      command: docker pull {{image_name}}
+
+    - name: run container
+      command: docker run --name {{container_name}} -v {{dir}}/config/config.js:/app/config.js -p {{expose_port}}:80 -d --restart always {{image_name}}
