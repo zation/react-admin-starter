@@ -8,7 +8,7 @@ import { push as pushAction } from 'react-router-redux';
 import {
   updateAll as updateAllBannersAction,
 } from 'shared/entities/actions/shop-banner';
-import Form from 'shared/components/banner/banner-form';
+import Form from '../components/banner-form';
 
 import selector from './banner-creator-selector';
 
