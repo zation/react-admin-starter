@@ -20,7 +20,7 @@
     "js-cookie": "2.1.4",
     "lodash": "4.17.4",
     "moment": "2.18.1",
-    "normalizr": "2.3.0",
+    "normalizr": "3.2.3",
     "nprogress": "0.2.0",
     "qs": "6.4.0",
     "react": "15.5.4",

@@ -1,7 +1,7 @@
 import { isArray, propOr } from 'lodash/fp';
-import { normalize, arrayOf } from 'normalizr';
+import { normalize } from 'normalizr';
 
 export default schema => (originalData, { payload }) =>
-  propOr({}, `entities.${schema.getKey()}`)(
-    normalize(payload, isArray(payload) ? arrayOf(schema) : schema),
+  propOr({}, `entities.${schema.key}`)(
+    normalize(payload, isArray(payload) ? [schema] : schema),
   );
