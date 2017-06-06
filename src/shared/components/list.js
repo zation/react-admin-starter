@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { compose, setPropTypes, setDisplayName } from 'recompose';
 import { map, prop } from 'lodash/fp';
 import { Row, Col } from 'antd';

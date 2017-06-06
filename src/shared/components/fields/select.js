@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Form, Select } from 'antd';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { map } from 'lodash/fp';

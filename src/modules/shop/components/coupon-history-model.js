@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Modal, Table, Button } from 'antd';
 import { compose, setDisplayName, setPropTypes, withState } from 'recompose';
 

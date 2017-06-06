@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Form, Upload, Message, Icon } from 'antd';
 import cookie from 'js-cookie';
 import { map, prop, isFunction } from 'lodash/fp';

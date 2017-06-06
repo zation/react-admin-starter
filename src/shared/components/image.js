@@ -1,5 +1,6 @@
 import { isUndefined } from 'lodash/fp';
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { compose, setPropTypes } from 'recompose';
 
 import getAbsoluteUrl from '../utils/absolute-url';

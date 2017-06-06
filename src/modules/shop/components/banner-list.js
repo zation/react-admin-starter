@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { setDisplayName, compose, setPropTypes, withProps, pure } from 'recompose';
 import { Link } from 'react-router';
 import { Popconfirm, Table } from 'antd';

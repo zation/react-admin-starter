@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { filter, includes, toUpper, flow, some, prop } from 'lodash/fp';
 import { compose, withHandlers, withState, setPropTypes, setDisplayName } from 'recompose';
 import { Input } from 'antd';

@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { Form, Radio } from 'antd';
 import { map } from 'lodash/fp';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
