@@ -1,6 +1,6 @@
 {
   "presets": [
-    "es2015",
+    ["es2015", { "modules": false }],
     "react"
   ],
   "plugins": [
@@ -12,5 +12,16 @@
     ["import", {
       "libraryName": "antd"
     }]
-  ]
+  ],
+  "env": {
+    "mocker": {
+      "presets": [
+        ["env", {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      ]
+    }
+  }
 }

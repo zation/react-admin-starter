@@ -1,5 +1,5 @@
-import path from 'path';
-import webpack from 'webpack';
+const path = require('path');
+const webpack = require('webpack');
 
 const DEBUG = process.env.NODE_ENV !== 'production';
 const VERBOSE = false;
@@ -39,13 +39,15 @@ if (DEBUG) {
   plugins.push(
     new webpack.HotModuleReplacementPlugin(),
   );
+  plugins.push(
+    new webpack.NamedModulesPlugin(),
+  );
 }
 
 module.exports = {
   entry: {
     app: DEBUG ? [
       'react-hot-loader/patch',
-      'webpack-hot-middleware/client',
       './src/index.js',
     ] : './src/index.js',
     vendor: [
@@ -203,4 +205,12 @@ module.exports = {
   },
 
   profile: true,
+
+  devServer: {
+    compress: true,
+    historyApiFallback: true,
+    hot: true,
+    overlay: true,
+    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'config')],
+  },
 };

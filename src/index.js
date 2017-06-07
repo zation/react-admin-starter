@@ -13,26 +13,22 @@ polyfill();
 const store = createStore(browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component history={history} store={store} />
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
+
+render(Root);
+
 // eslint-disable-next-line no-undef
 if (DEBUG && module.hot) {
   module.hot.accept('./reducers', () => {
     // eslint-disable-next-line global-require
     store.replaceReducer(require('./reducers').default);
   });
-  module.hot.accept('./root', () => {
-    // eslint-disable-next-line global-require
-    const NextRoot = require('./root').default;
-
-    ReactDOM.render(
-      <AppContainer>
-        <NextRoot store={store} history={history} />
-      </AppContainer>,
-      document.getElementById('root'),
-    );
-  });
+  module.hot.accept('./root', () => render(Root));
 }
-
-ReactDOM.render(
-  <Root store={store} history={history} />,
-  document.getElementById('root'),
-);
