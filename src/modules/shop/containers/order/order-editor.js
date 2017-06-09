@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Message } from 'antd';
 
 import { updateShipping as updateShippingAction } from 'shared/entities/actions/order';
-import Detail from '../components/order-detail';
+import Detail from '../../components/order-detail';
 import selector from './order-editor-selector';
 
 export default compose(

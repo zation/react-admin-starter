@@ -7,7 +7,7 @@ import {
   update as updateCouponAction,
 } from 'shared/entities/actions/coupon';
 import selector from './coupon-editor-selector';
-import Form from '../components/coupon-form';
+import Form from '../../components/coupon-form';
 
 export default compose(
   setDisplayName(__filename),

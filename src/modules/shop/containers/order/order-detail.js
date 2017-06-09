@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, setDisplayName } from 'recompose';
 import { connect } from 'react-redux';
 
-import Detail from '../components/order-detail';
+import Detail from '../../components/order-detail';
 import selector from './order-detail-selector';
 
 export default compose(

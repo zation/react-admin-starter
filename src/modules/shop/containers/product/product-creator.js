@@ -5,7 +5,7 @@ import { Message } from 'antd';
 import { push as pushAction } from 'react-router-redux';
 
 import { create as createProductAction } from 'shared/entities/actions/product';
-import Form from '../components/product-form';
+import Form from '../../components/product-form';
 import selector from './product-creator-selector';
 
 export default compose(

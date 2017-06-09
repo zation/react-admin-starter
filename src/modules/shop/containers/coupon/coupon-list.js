@@ -12,7 +12,7 @@ import {
 } from 'shared/entities/actions/coupon';
 import Stats from 'shared/components/stats';
 import selector from './coupon-list-selector';
-import List from '../components/coupon-list';
+import List from '../../components/coupon-list';
 
 export default compose(
   setDisplayName(__filename),

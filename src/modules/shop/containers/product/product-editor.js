@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Message } from 'antd';
 
 import { update as updateProductAction } from 'shared/entities/actions/product';
-import Form from '../components/product-form';
+import Form from '../../components/product-form';
 import selector from './product-editor-selector';
 
 export default compose(

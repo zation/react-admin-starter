@@ -1,16 +1,16 @@
-import ShopBannerList from './containers/banner-list';
-import ShopBannerCreator from './containers/banner-creator';
-import ShopBannerEditor from './containers/banner-editor';
+import ShopBannerList from './containers/banner/banner-list';
+import ShopBannerCreator from './containers/banner/banner-creator';
+import ShopBannerEditor from './containers/banner/banner-editor';
 import CategoryList from './containers/category-list';
-import ProductList from './containers/product-list';
-import ProductEditor from './containers/product-editor';
-import ProductCreator from './containers/product-creator';
-import CouponList from './containers/coupon-list';
-import CouponCreator from './containers/coupon-creator';
-import CouponEditor from './containers/coupon-editor';
-import OrderList from './containers/order-list';
-import OrderDetail from './containers/order-detail';
-import OrderEditor from './containers/order-editor';
+import ProductList from './containers/product/product-list';
+import ProductEditor from './containers/product/product-editor';
+import ProductCreator from './containers/product/product-creator';
+import CouponList from './containers/coupon/coupon-list';
+import CouponCreator from './containers/coupon/coupon-creator';
+import CouponEditor from './containers/coupon/coupon-editor';
+import OrderList from './containers/order/order-list';
+import OrderDetail from './containers/order/order-detail';
+import OrderEditor from './containers/order/order-editor';
 
 export default () => ({
   path: 'shop',

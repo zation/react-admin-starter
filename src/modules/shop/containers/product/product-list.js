@@ -11,7 +11,7 @@ import {
 import { PUBLISHED, DRAFT } from 'shared/constants/product-status';
 import Stats from 'shared/components/stats';
 import selector from './product-list-selector';
-import List from '../components/product-list';
+import List from '../../components/product-list';
 
 export default compose(
   setDisplayName(__filename),

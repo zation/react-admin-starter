@@ -8,7 +8,7 @@ import { map, flow, reject, propEq } from 'lodash/fp';
 import {
   updateAll as updateAllBannersAction,
 } from 'shared/entities/actions/shop-banner';
-import List from '../components/banner-list';
+import List from '../../components/banner-list';
 
 import selector from './banner-list-selector';
 

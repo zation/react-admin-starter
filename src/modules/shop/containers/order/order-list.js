@@ -9,7 +9,7 @@ import {
 } from 'shared/entities/actions/order';
 import Stats from 'shared/components/stats';
 import selector from './order-list-selector';
-import List from '../components/order-list';
+import List from '../../components/order-list';
 
 export default compose(
   setDisplayName(__filename),

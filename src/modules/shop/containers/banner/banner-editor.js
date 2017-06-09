@@ -6,7 +6,7 @@ import { Message } from 'antd';
 import {
   updateAll as updateAllBannersAction,
 } from 'shared/entities/actions/shop-banner';
-import Form from '../components/banner-form';
+import Form from '../../components/banner-form';
 
 import selector from './banner-editor-selector';
 
