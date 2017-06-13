@@ -1,7 +1,7 @@
 - hosts: target
   remote_user: '{{user}}'
   vars:
-    repository_name: registry-vpc.cn-hangzhou.aliyuncs.com/artwater/admin-web
+    repository_name: registry.docker.com/react-admin-starter
     image_name: '{{repository_name}}:{{version}}'
     container_name: admin-web
 

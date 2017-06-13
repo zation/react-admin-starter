@@ -1,2 +1,2 @@
 [target]
-artwaterspace.com expose_port=3000 user=artwater dir=~/source/water-and-art-admin-web
+domain.com expose_port=3000 user=user dir=~/source/react-admin-starter
