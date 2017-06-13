@@ -9,10 +9,10 @@ export const FINISHED = 'FINISHED';
 export const CLOSED = 'CLOSED';
 
 const textMap = {
-  [FINISHED]: '已完成',
-  [PENDING]: '待支付',
-  [SHIPPING]: '待收货',
-  [CLOSED]: '已关闭',
+  [FINISHED]: 'Finished',
+  [PENDING]: 'Pending',
+  [SHIPPING]: 'Shipping',
+  [CLOSED]: 'Closed',
 };
 
 export const getOrderStatusText = (
@@ -25,7 +25,7 @@ export const getOrderStatusText = (
     return getPaymentStatusText(paymentStatus);
   }
   if (orderStatus === SHIPPING && !shippingCompany && !shippingNumber) {
-    return '待发货';
+    return textMap[PENDING];
   }
   return textMap[orderStatus];
 };

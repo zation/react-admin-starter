@@ -23,7 +23,7 @@ export default compose(
         name,
         type,
       }).then(() => {
-        Message.success('创建礼卷成功！');
+        Message.success('Create coupon success!');
         push('/shop/coupon/list');
       }),
   }),

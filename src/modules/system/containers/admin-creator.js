@@ -17,7 +17,7 @@ export default compose(
   ),
   withHandlers({
     createUser: ({ createUser, push }) => values => createUser(values).then(action => {
-      Message.info('创建用户成功！');
+      Message.info('Create user success!');
       push(`/system/admin/edit/${action.payload.id}`);
     }),
   }),

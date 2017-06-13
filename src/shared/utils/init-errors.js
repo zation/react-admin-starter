@@ -5,7 +5,7 @@ export default (values, { requiredFields = [] }) => reduce(
     if (isNil(prop(requiredField)(values))) {
       return {
         ...errors,
-        [requiredField]: '必填项',
+        [requiredField]: 'Required field',
       };
     }
     return errors;

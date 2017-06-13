@@ -24,12 +24,12 @@ export default (state) => {
     coupons,
     statsItems: [{
       key: 'total',
-      title: '总数',
+      title: 'Total',
       type: NUMBER,
       data: size(coupons),
     }, {
       key: 'type',
-      title: '类型',
+      title: 'Type',
       type: PIE,
       data: [{
         name: getCouponTypeText(PERCENTAGE),
@@ -42,7 +42,7 @@ export default (state) => {
       }],
     }, {
       key: 'status',
-      title: '状态',
+      title: 'Status',
       type: PIE,
       data: [{
         name: getCouponStatusText(ACTIVE),
@@ -55,14 +55,14 @@ export default (state) => {
       }],
     }, {
       key: 'expiration',
-      title: '过期',
+      title: 'Expiration',
       type: PIE,
       data: [{
-        name: '未过期',
+        name: 'Expired',
         value: flow(filter(({ expiredAt }) => moment().isBefore(expiredAt)), size)(coupons),
         fill: GREEN,
       }, {
-        name: '已过期',
+        name: 'Not expire',
         value: flow(filter(({ expiredAt }) => moment().isAfter(expiredAt)), size)(coupons),
         fill: RED,
       }],

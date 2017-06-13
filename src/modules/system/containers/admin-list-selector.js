@@ -1,6 +1,6 @@
 import { flow, reject, prop } from 'lodash/fp';
 import { getEntityArray } from 'shared/entities/get-entity';
-import { CUSTOMER, ADMIN } from 'shared/constants/user-role';
+import { CUSTOMER } from 'shared/constants/user-role';
 import getCurrentUser from 'shared/selector-helpers/current-user';
 
 export default state => {

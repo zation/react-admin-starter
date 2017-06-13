@@ -21,7 +21,7 @@ export default compose(
         if (status === ACTIVE) {
           push('/');
         } else {
-          Message.error('用户未激活，请联系管理员激活帐号后登录。');
+          Message.error('User is inactive, please contact admin.');
         }
       }),
   }),

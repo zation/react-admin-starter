@@ -6,8 +6,8 @@ export const BLANK = 'BLANK';
 export const DEFAULT = 'DEFAULT';
 
 const textMap = {
-  [BLANK]: '在新页面打开',
-  [DEFAULT]: '在本页面打开',
+  [BLANK]: 'In new tab',
+  [DEFAULT]: 'In current tab',
 };
 
 export const getLinkTargetText = target => textMap[target];

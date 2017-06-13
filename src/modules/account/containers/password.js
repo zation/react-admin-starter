@@ -18,7 +18,7 @@ export default compose(
       resetPassword({
         ...values,
         userId,
-      }).then(() => Message.success('修改密码成功！')),
+      }).then(() => Message.success('Reset password success!')),
   }),
   setDisplayName(__filename),
 )(({ resetPassword }) => (

@@ -40,7 +40,7 @@ export default compose(
   >
     <Field
       name="title"
-      label="名称"
+      label="Title"
       component={Input}
       type="text"
       required
@@ -49,18 +49,18 @@ export default compose(
     />
     <Field
       name="cover"
-      label="缩略图"
+      label="Cover"
       component={SingleUploader}
       accept="image/*"
       style={{ width: 450, height: 225 }}
       required
       validate={required}
       layout={layout}
-      extraText="推荐尺寸：高 540px，宽 400px"
+      extraText="Suggested size: 540 x 400"
     />
     <Field
       name="author"
-      label="作者"
+      label="Author"
       component={Input}
       type="text"
       required
@@ -69,7 +69,7 @@ export default compose(
     />
     <Field
       name="externalLink"
-      label="外部链接"
+      label="External Link"
       component={Input}
       type="text"
       required
@@ -78,7 +78,7 @@ export default compose(
     />
     <Field
       name="tags"
-      label="标签"
+      label="Tags"
       component={Select}
       options={contentTagOptions}
       mode="tags"
@@ -86,36 +86,36 @@ export default compose(
     />
     <Field
       name="isRecommended"
-      label="是否推荐"
+      label="Recommendation"
       component={RadioGroup}
       options={[{
         value: true,
-        text: '是',
+        text: 'Yes',
       }, {
         value: false,
-        text: '否',
+        text: 'No',
       }]}
       layout={layout}
     />
     <Field
       name="status"
-      label="是否发布"
+      label="Publish"
       component={RadioGroup}
       options={[{
         value: PUBLISHED,
-        text: '是',
+        text: 'Yes',
       }, {
         value: DRAFT,
-        text: '否',
+        text: 'No',
       }]}
       layout={layout}
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to="/content/list">返回列表</Link>
+        <Link to="/content/list">Back</Link>
       </Button>
     </Item>
   </Form>

@@ -31,7 +31,7 @@ export default compose(
   meta: { touched, error },
   layout,
   label,
-  placeholder = '点击上传',
+  placeholder = 'Click to upload',
   style,
   required,
   disabled,
@@ -63,12 +63,12 @@ export default compose(
               action={`${API_BASE_URL}/resource`}
               onChange={({ file: { response, status } }) => {
                 if (status === 'done') {
-                  Message.info('上传成功！');
+                  Message.info('Upload success!');
                   onChange(response.url);
                 } else if (status === 'error') {
                   const { errors } = response;
                   Message.error(
-                    errors ? map(prop('message'))(errors) : '上传失败',
+                    errors ? map(prop('message'))(errors) : 'Upload failed.',
                   );
                 }
               }}

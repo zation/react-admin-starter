@@ -6,8 +6,8 @@ export const MALE = 'MALE';
 export const FEMALE = 'FEMALE';
 
 const textMap = {
-  [MALE]: '男',
-  [FEMALE]: '女',
+  [MALE]: 'Male',
+  [FEMALE]: 'Female',
 };
 
 export const getGenderText = gender => textMap[gender];

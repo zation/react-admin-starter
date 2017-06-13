@@ -20,7 +20,7 @@ export default compose(
         id: couponId,
         ...value,
       }).then(() => {
-        Message.success('编辑礼卷成功！');
+        Message.success('Edit coupon success!');
       }),
   }),
 )(({ initialValues, updateCoupon, name, type, code }) => (

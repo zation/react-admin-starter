@@ -26,12 +26,12 @@ export default (state) => {
     orders,
     statsItems: [{
       key: 'total',
-      title: '订单总数',
+      title: 'Total',
       data: size(orders),
       type: NUMBER,
     }, {
       key: 'grandTotal',
-      title: '应付款（元）',
+      title: 'Grand Total',
       data: flow(
         reject(propEq('status', CLOSED)),
         sumBy(prop('grandTotal')),
@@ -40,7 +40,7 @@ export default (state) => {
       formatter: price({ currency: '' }),
     }, {
       key: 'payedGrandTotal',
-      title: '已付款（元）',
+      title: 'Payed Total',
       data: sumBy(
         ({ grandTotal, payment: { status } }) => (status === FINISHED ? grandTotal : 0),
       )(orders),
@@ -48,7 +48,7 @@ export default (state) => {
       formatter: price({ currency: '' }),
     }, {
       key: 'status',
-      title: '状态',
+      title: 'Status',
       type: PIE,
       data: [{
         name: getOrderStatusText(PENDING),

@@ -17,17 +17,18 @@ export default compose(
   }),
   withProps(({ removeProductCategory, updateProductCategory }) => ({
     columns: [{
-      title: '名称',
+      title: 'Title',
       key: 'name',
       dataIndex: 'name',
-      render: (name, { id }) =>
+      render: (name, { id }) => (
         <Form
           form={`${PRODUCT_CATEGORY}${id}`}
           initialValues={{ name }}
           removeProductCategory={() => removeProductCategory({ id })}
           onSubmit={(values) => updateProductCategory({ ...values, id })}
           isEditing
-        />,
+        />
+      ),
     }],
 
   })),

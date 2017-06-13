@@ -18,7 +18,7 @@ export default compose(
   searchComposer,
   withProps(({ toggleUserStatus }) => ({
     columns: [{
-      title: '昵称',
+      title: 'Nickname',
       dataIndex: 'nickname',
       key: 'nickname',
     }, {
@@ -26,21 +26,21 @@ export default compose(
       dataIndex: 'email',
       key: 'email',
     }, {
-      title: '权限组',
+      title: 'Role',
       dataIndex: 'role.name',
       key: 'role.name',
     }, {
-      title: '创建时间',
+      title: 'Create Time',
       dataIndex: 'createdAt',
       key: 'createdAt',
       render: time(),
     }, {
-      title: '状态',
+      title: 'Status',
       dataIndex: 'status',
       key: 'status',
       render: getUserStatusText,
     }, {
-      title: '激活/禁用',
+      title: 'Activate / Inactivate',
       dataIndex: 'status',
       key: 'activation',
       render: (status, { id, role }) => (
@@ -50,13 +50,13 @@ export default compose(
         ) : null
       ),
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: (value, { id, role }) => (
         role.key !== ADMIN
         ? (
           <div>
-            <Link to={`/system/admin/edit/${id}`}>编辑</Link>&nbsp;&nbsp;
+            <Link to={`/system/admin/edit/${id}`}>Edit</Link>&nbsp;&nbsp;
           </div>
         ) : null
       ),
@@ -65,7 +65,7 @@ export default compose(
 )(({ users, search, query, columns }) => (
   <div>
     <Search
-      placeholder="请输入昵称、Email进行搜索"
+      placeholder="Please search by nickname, email"
       search={search}
     />
 

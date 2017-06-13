@@ -17,7 +17,7 @@ export default compose(
     updateRole: ({ updateRole, roleId }) => values => updateRole({
       id: roleId,
       ...values,
-    }).then(() => Message.info('修改权限组成功！')),
+    }).then(() => Message.info('Edit role success!')),
   }),
   setDisplayName(__filename),
 )(({ updateRole, initialValues }) => (

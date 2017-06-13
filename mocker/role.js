@@ -5,27 +5,27 @@ import { MANAGE_ROLE, MANAGE_ADMIN } from '../src/shared/constants/operation';
 
 export const admin = {
   id: 1,
-  name: '管理员',
+  name: 'Admin',
   key: ADMIN_ROLE,
   operations: [],
 };
 
 export const customer = {
   id: 2,
-  name: '用户',
+  name: 'Customer',
   key: CUSTOMER,
   operations: [],
 };
 
 export const oneRole = {
   id: 3,
-  name: '权限组',
+  name: 'Some Role',
   operations: [MANAGE_ROLE, MANAGE_ADMIN],
 };
 
 export const anotherRole = {
   id: 4,
-  name: '另一个权限组',
+  name: 'Another Role',
   operations: [MANAGE_ADMIN],
 };
 

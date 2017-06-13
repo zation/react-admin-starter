@@ -14,18 +14,18 @@ export const MANAGE_COUPON = 'MANAGE_COUPON';
 export const MANAGE_ORDER = 'MANAGE_ORDER';
 
 const textMap = {
-  [MANAGE_ADMIN]: '后台帐号管理',
-  [MANAGE_CUSTOMER]: '用户管理',
-  [MANAGE_ROLE]: '权限管理',
+  [MANAGE_ADMIN]: 'Admin Management',
+  [MANAGE_CUSTOMER]: 'Customer Management',
+  [MANAGE_ROLE]: 'Role Management',
   [CREATE_CONTENT]: 'Create Content',
   [MANAGE_CONTENT]: 'Content List',
-  [MANAGE_PROFILE]: '编辑帐号信息',
-  [MANAGE_PASSWORD]: '修改密码',
-  [MANAGE_SHOP_BANNER]: '横幅设置',
-  [MANAGE_PRODUCT_CATEGORY]: '类型管理',
-  [MANAGE_PRODUCT]: '商品管理',
-  [MANAGE_COUPON]: '礼券管理',
-  [MANAGE_ORDER]: '订单管理',
+  [MANAGE_PROFILE]: 'Profile',
+  [MANAGE_PASSWORD]: 'Password',
+  [MANAGE_SHOP_BANNER]: 'Banner',
+  [MANAGE_PRODUCT_CATEGORY]: 'Product Category',
+  [MANAGE_PRODUCT]: 'Product',
+  [MANAGE_COUPON]: 'Coupon',
+  [MANAGE_ORDER]: 'Order',
 };
 
 const linkMap = {

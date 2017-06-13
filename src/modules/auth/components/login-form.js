@@ -34,27 +34,27 @@ export default compose(
     <Field
       name="username"
       component={Input}
-      label="用户名"
+      label="Username"
       type="text"
-      placeholder="请输入用户名"
+      placeholder="Please input username"
       layout={layout}
       validate={[required, minLength(6)]}
     />
     <Field
       name="password"
       component={Input}
-      label="密码"
+      label="Password"
       type="password"
-      placeholder="请输入密码"
+      placeholder="Please input password"
       layout={layout}
       validate={required}
     />
     <Item
       wrapperCol={{ span: 12, offset: 8 }}
     >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;&nbsp;
-      <Button type="ghost" onClick={reset}>重置</Button>
+      <Button type="ghost" onClick={reset}>Reset</Button>
     </Item>
   </Form>
 ));

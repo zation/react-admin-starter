@@ -36,7 +36,7 @@ export default compose(
   >
     <Field
       name="shippingCompany"
-      label="快递公司"
+      label="Shipping Company"
       component={Select}
       options={shippingCompanyOptions}
       required
@@ -45,7 +45,7 @@ export default compose(
     />
     <Field
       name="shippingNumber"
-      label="快递单号"
+      label="Shipping Number"
       component={Input}
       type="text"
       required
@@ -54,10 +54,10 @@ export default compose(
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to="/shop/order/list">返回列表</Link>
+        <Link to="/shop/order/list">Back</Link>
       </Button>
     </Item>
   </Form>

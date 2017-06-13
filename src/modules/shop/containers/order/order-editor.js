@@ -15,7 +15,7 @@ export default compose(
   withHandlers({
     updateShipping: ({ updateShipping, order }) => (values) =>
       updateShipping({ id: order.id, ...values })
-        .then(() => Message.success('编辑快递信息成功！')),
+        .then(() => Message.success('Edit shipping info success!')),
   }),
 )(({ order, updateShipping }) => (
   <Detail order={order} isEditing updateShipping={updateShipping} />

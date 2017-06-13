@@ -23,7 +23,7 @@ export default compose(
       id,
       status: status === ACTIVE ? INACTIVE : ACTIVE,
     }).then(() => {
-      Message.success('已更新用户状态');
+      Message.success('Update user status success!');
     }),
   }),
 )(({ users, statsItems, toggleUserStatus }) => (

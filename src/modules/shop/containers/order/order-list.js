@@ -19,9 +19,9 @@ export default compose(
   }),
   withHandlers({
     closeOrder: ({ closeOrder }) => ({ id }) => () =>
-      closeOrder({ id }).then(() => Message.success('成功关闭订单')),
+      closeOrder({ id }).then(() => Message.success('Close order success!')),
     completeOrder: ({ completeOrder }) => ({ id }) => () =>
-      completeOrder({ id }).then(() => Message.success('成功完成订单')),
+      completeOrder({ id }).then(() => Message.success('Complete order success!')),
   }),
 )(({ orders, closeOrder, completeOrder, statsItems }) => (
   <div>

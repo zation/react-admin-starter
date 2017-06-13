@@ -31,7 +31,7 @@ export default compose(
     <Field
       name="oldPassword"
       component={Input}
-      label="旧密码"
+      label="Old Password"
       type="password"
       layout={layout}
       validate={required}
@@ -39,7 +39,7 @@ export default compose(
     <Field
       name="newPassword"
       component={Input}
-      label="新密码"
+      label="New Password"
       type="password"
       layout={layout}
       validate={required}
@@ -47,7 +47,7 @@ export default compose(
     <Field
       name="confirmedNewPassword"
       component={Input}
-      label="重复新密码"
+      label="Repeat Password"
       type="password"
       layout={layout}
       validate={[required, samePasswordAs('newPassword')]}
@@ -55,7 +55,7 @@ export default compose(
     <Item
       wrapperCol={{ span: 12, offset: 8 }}
     >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
     </Item>
   </Form>
 ));

@@ -38,7 +38,7 @@ export default compose(
   >
     <Field
       name="name"
-      label="权限组名称"
+      label="Name"
       component={Input}
       type="text"
       required
@@ -47,7 +47,7 @@ export default compose(
     />
     <Field
       name="operations"
-      label="权限"
+      label="Operations"
       component={Select}
       options={operationGroupOptions}
       required
@@ -57,9 +57,9 @@ export default compose(
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
-      <Button onClick={reset}>重置</Button>
+      <Button onClick={reset}>Reset</Button>
     </Item>
   </Form>
 ));

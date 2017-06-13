@@ -41,7 +41,7 @@ export default compose(
           <Icon type="user" /> {username}
         </span>
         <Link to="/auth/login" style={{ marginLeft: 10 }} onClick={logout}>
-          <Icon type="logout" /> 登出
+          <Icon type="logout" /> Logout
         </Link>
       </div>
       <span className={style.Title}>React Admin Starter</span>

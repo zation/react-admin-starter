@@ -41,25 +41,25 @@ export default compose(
     onSubmit={handleSubmit(submit(onSubmit))}
   >
     <PlainText
-      label="名称"
+      label="Name"
       layout={layout}
       input={{ value: name }}
     />
     <PlainText
-      label="类型"
+      label="Type"
       layout={layout}
       input={{ value: getCouponTypeText(type) }}
     />
     {isEditing ? (
       <div>
         <PlainText
-          label="兑换码"
+          label="Code"
           layout={layout}
           input={{ value: code }}
         />
         <Field
           name="inventory"
-          label="库存"
+          label="Inventory"
           component={PlainText}
           required
           layout={layout}
@@ -70,7 +70,7 @@ export default compose(
         {type === FIXED ? (
           <Field
             name="condition"
-            label="满"
+            label="More than"
             component={InputNumber}
             required
             validate={required}
@@ -80,7 +80,7 @@ export default compose(
         {type === PERCENTAGE ? (
           <Field
             name="discount"
-            label="折扣"
+            label="Discount"
             component={InputNumber}
             extraText="%"
             required
@@ -92,7 +92,7 @@ export default compose(
         ) : (
           <Field
             name="discount"
-            label="减"
+            label="reduce"
             component={InputNumber}
             required
             validate={required}
@@ -103,7 +103,7 @@ export default compose(
     )}
     <Field
       name="capacity"
-      label="总量"
+      label="Capacity"
       component={InputNumber}
       required
       validate={required}
@@ -111,7 +111,7 @@ export default compose(
     />
     <Field
       name="expiredAt"
-      label="过期时间"
+      label="Expire Time"
       component={DatePicker}
       required
       validate={required}
@@ -119,10 +119,10 @@ export default compose(
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to="/shop/coupon/list">返回列表</Link>
+        <Link to="/shop/coupon/list">Back</Link>
       </Button>
     </Item>
   </Form>

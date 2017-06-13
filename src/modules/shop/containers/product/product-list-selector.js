@@ -26,12 +26,12 @@ export default (state) => {
     products,
     statsItems: [{
       key: 'total',
-      title: '总量',
+      title: 'Total',
       type: NUMBER,
       data: size(products),
     }, {
       key: 'status',
-      title: '状态',
+      title: 'Status',
       type: PIE,
       data: [{
         name: getProductStatusText(PUBLISHED),

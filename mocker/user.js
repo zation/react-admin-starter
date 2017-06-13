@@ -18,7 +18,7 @@ const getUser = values => ({
   shippingInfo: {
     city: '110100',
     province: '110000',
-    address: '某个地址',
+    address: 'Some Address',
     receiverName: name.findName(),
     receiverPhone: '18728374829',
     zipCode: '1100100',

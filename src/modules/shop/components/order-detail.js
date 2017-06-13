@@ -11,33 +11,33 @@ import { price } from 'shared/utils/formatter';
 import ShippingForm from './shipping-form';
 
 const columns = [{
-  title: '商品名',
+  title: 'Name',
   dataIndex: 'name',
   key: 'name',
 }, {
-  title: '单价',
+  title: 'Price',
   dataIndex: 'unitPrice',
   key: 'unitPrice',
   render: price(),
 }, {
-  title: '数量',
+  title: 'Quantity',
   dataIndex: 'quantity',
   key: 'quantity',
 }];
 
 const paymentInfoItems = [{
-  title: '商品总额',
+  title: 'Total',
   dataIndex: 'total',
   render: price(),
 }, {
-  title: '运费',
+  title: 'Shipping Fee',
   dataIndex: 'shippingFee',
   render: price(),
 }, {
-  title: '优惠券抵扣',
+  title: 'Discount',
   render: ({ subTotal, total }) => price()(subTotal - total),
 }, {
-  title: '应付总额',
+  title: 'Grand Total',
   dataIndex: 'grandTotal',
   render: price(),
 }];
@@ -53,39 +53,39 @@ export default compose(
   }),
   withProps(({ isEditing }) => ({
     items: [{
-      title: '订单号',
+      title: 'Order Number',
       dataIndex: 'orderNo',
     }, {
-      title: '订单名称',
+      title: 'Name',
       dataIndex: 'name',
     }, {
-      title: '备注',
+      title: 'Comment',
       dataIndex: 'comment',
     }, {
-      title: '状态',
+      title: 'Status',
       dataIndex: 'status',
       render: (
         orderStatus,
         { payment: { status: paymentStatus }, shippingCompany, shippingNumber },
       ) => getOrderStatusText(orderStatus, paymentStatus, shippingCompany, shippingNumber),
     }, {
-      title: '用户',
+      title: 'Username',
       dataIndex: 'user.username',
     }, {
-      title: '收货姓名',
+      title: 'Receiver Name',
       dataIndex: 'receiverName',
     }, {
-      title: '收货电话',
+      title: 'Receiver Phone',
       dataIndex: 'receiverPhone',
     }, {
-      title: '收货地址',
+      title: 'Receiver Address',
       dataIndex: 'receiverAddress',
     }, ...(isEditing ? [] : [{
-      title: '快递公司',
+      title: 'Shipping Company',
       dataIndex: 'shippingCompany',
       render: getShippingCompanyText,
     }, {
-      title: '快递单号',
+      title: 'Shipping Number',
       dataIndex: 'shippingNumber',
     }])],
   })),
@@ -94,20 +94,20 @@ export default compose(
     {isEditing ? (
       <Row>
         <Col span={16} offset={4}>
-          <h3 style={{ margin: '10px 0' }}>编辑快递信息</h3>
+          <h3 style={{ margin: '10px 0' }}>Edit Shipping Info</h3>
           <ShippingForm onSubmit={updateShipping} initialValues={order} />
         </Col>
       </Row>
     ) : null}
     <List
-      title="基本信息"
+      title="Basic Info"
       dataSource={order}
       items={items}
       labelLayout={{ span: 4, offset: 4 }}
     />
     <Row>
       <Col span={16} offset={4}>
-        <h3 style={{ margin: '10px 0' }}>商品信息</h3>
+        <h3 style={{ margin: '10px 0' }}>Product Info</h3>
         <Table
           columns={columns}
           dataSource={order.items}
@@ -126,7 +126,7 @@ export default compose(
     <Row>
       <Col span={16} offset={4}>
         <Button>
-          <Link to={backUrl}>返回</Link>
+          <Link to={backUrl}>Back</Link>
         </Button>
       </Col>
     </Row>

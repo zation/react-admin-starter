@@ -14,25 +14,25 @@ export default compose(
   setDisplayName(__filename),
   withProps(({ removeRole }) => ({
     columns: [{
-      title: '组名',
+      title: 'Name',
       dataIndex: 'name',
       key: 'name',
     }, {
-      title: '权限',
+      title: 'Operations',
       dataIndex: 'operations',
       key: 'operations',
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: (value, { id, key }) => (
         includes(key)(notAbleToModifiedKeies) ? null : (
           <div>
-            <Link to={`/system/role/edit/${id}`}>编辑</Link>&nbsp;&nbsp;
+            <Link to={`/system/role/edit/${id}`}>Edit</Link>&nbsp;&nbsp;
             <Popconfirm
-              title="确认删除该角色吗？"
+              title="Confirm to delete this role?"
               onConfirm={() => removeRole({ id })}
             >
-              <a>删除</a>
+              <a>Delete</a>
             </Popconfirm>
           </div>
         )

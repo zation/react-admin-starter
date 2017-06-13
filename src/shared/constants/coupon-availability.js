@@ -7,9 +7,9 @@ export const USED = 'USED';
 export const EXPIRED = 'EXPIRED';
 
 const textMap = {
-  [AVAILABLE]: '可用',
-  [USED]: '已用',
-  [EXPIRED]: '过期',
+  [AVAILABLE]: 'Available',
+  [USED]: 'Used',
+  [EXPIRED]: 'Expired',
 };
 
 export const getCouponAvailabilityText = availability => textMap[availability];

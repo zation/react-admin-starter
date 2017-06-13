@@ -21,34 +21,34 @@ export default compose(
   }),
   withProps(({ removeProduct, toggleProductStatus, toggleRecommendation }) => ({
     columns: [{
-      title: '封面',
+      title: 'Cover',
       key: 'cover',
       dataIndex: 'cover',
       render: (cover) => <Image width={120} src={cover} alt="cover" />,
     }, {
-      title: '名称',
+      title: 'Name',
       key: 'name',
       dataIndex: 'name',
     }, {
-      title: '原价',
+      title: 'Original Price',
       key: 'originalPrice',
       dataIndex: 'originalPrice',
       render: price(),
     }, {
-      title: '销售价',
+      title: 'Sales Price',
       key: 'price',
       dataIndex: 'price',
       render: price(),
     }, {
-      title: '类别',
+      title: 'Type',
       key: 'type',
       dataIndex: 'type',
     }, {
-      title: '类型',
+      title: 'Category',
       key: 'category',
       dataIndex: 'category',
     }, {
-      title: '是否上架',
+      title: 'Publish',
       key: 'status',
       dataIndex: 'status',
       render: (status, { id }) => (
@@ -57,7 +57,7 @@ export default compose(
         </div>
       ),
     }, {
-      title: '是否推荐',
+      title: 'Recommendation',
       key: 'recommendation',
       dataIndex: 'isRecommended',
       render: (isRecommended, { id, status }) => (
@@ -70,7 +70,7 @@ export default compose(
         </div>
       ),
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: ({ id }) => (
         <div>
@@ -79,16 +79,16 @@ export default compose(
             target="_blank"
             rel="noopener noreferrer"
           >
-            预览
+            Preview
           </a>
           &nbsp;&nbsp;
-          <Link to={`/shop/product/edit/${id}`}>编辑</Link>
+          <Link to={`/shop/product/edit/${id}`}>Edit</Link>
           &nbsp;&nbsp;
           <Popconfirm
-            title="确定删除该产品吗？"
+            title="Confirm to delete this product?"
             onConfirm={() => removeProduct({ id })}
           >
-            <a>删除</a>
+            <a>Delete</a>
           </Popconfirm>
         </div>
       ),
@@ -98,7 +98,7 @@ export default compose(
 )(({ products, columns, search, query }) => (
   <div>
     <Search
-      placeholder="请输入名称、类别、类型进行搜索"
+      placeholder="Please search by name, category, type"
       search={search}
     />
 

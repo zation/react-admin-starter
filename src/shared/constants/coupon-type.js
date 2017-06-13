@@ -6,8 +6,8 @@ export const FIXED = 'FIXED';
 export const PERCENTAGE = 'PERCENTAGE';
 
 const textMap = {
-  [FIXED]: '满减',
-  [PERCENTAGE]: '折扣',
+  [FIXED]: 'Fixed',
+  [PERCENTAGE]: 'Percentage',
 };
 
 export const getCouponTypeText = type => textMap[type];

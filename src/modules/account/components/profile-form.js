@@ -33,7 +33,7 @@ export default compose(
     <Field
       name="nickname"
       component={Input}
-      label="昵称"
+      label="Nickname"
       type="text"
       layout={layout}
       validate={required}
@@ -41,7 +41,7 @@ export default compose(
     <Field
       name="username"
       component={Input}
-      label="用户名"
+      label="Username"
       type="text"
       layout={layout}
       validate={required}
@@ -50,13 +50,13 @@ export default compose(
       name="gender"
       component={RadioGroup}
       options={genderOptions}
-      label="性别"
+      label="Gender"
       layout={layout}
     />
     <Item
       wrapperCol={{ span: 12, offset: 8 }}
     >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
     </Item>
   </Form>
 ));

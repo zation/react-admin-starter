@@ -58,12 +58,12 @@ export default compose(
           }))(value)}
           onChange={({ file: { response, status } }) => {
             if (status === 'done') {
-              Message.info('上传成功！');
+              Message.info('Upload success!');
               onChange(value ? concat(value)(response.url) : [response.url]);
             } else if (status === 'error') {
               const { errors } = response;
               Message.error(
-                errors ? map(prop('message'))(errors) : '上传失败',
+                errors ? map(prop('message'))(errors) : 'Upload failed.',
               );
             }
           }}

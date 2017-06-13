@@ -16,7 +16,7 @@ export default compose(
 )(({ roles, removeRole }) => (
   <div>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
-      <Link to="/system/role/create">添加权限组</Link>
+      <Link to="/system/role/create">Create</Link>
     </Button>
 
     <List roles={roles} removeRole={removeRole} />

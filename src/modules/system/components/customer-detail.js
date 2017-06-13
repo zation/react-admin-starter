@@ -13,54 +13,54 @@ import { getCouponAvailabilityText } from 'shared/constants/coupon-availability'
 import { getOrderStatusText } from 'shared/constants/order-status';
 
 const items = [{
-  title: '昵称',
+  title: 'Nickname',
   dataIndex: 'nickname',
 }, {
-  title: '用户名',
+  title: 'Username',
   dataIndex: 'username',
 }, {
-  title: '生日',
+  title: 'Birthday',
   dataIndex: 'birthDay',
   render: date(),
 }, {
-  title: '性别',
+  title: 'Gender',
   dataIndex: 'gender',
   render: getGenderText,
 }, {
   title: 'Email',
   dataIndex: 'email',
 }, {
-  title: '状态',
+  title: 'Status',
   dataIndex: 'status',
   render: getUserStatusText,
 }, {
-  title: '注册日期',
+  title: 'Register Time',
   dataIndex: 'createdAt',
   render: date(),
 }];
 
 const couponColumns = [{
   key: 'name',
-  title: '名称',
+  title: 'Name',
   dataIndex: 'coupon.name',
 }, {
   key: 'type',
-  title: '类型',
+  title: 'Type',
   dataIndex: 'coupon.type',
   render: getCouponTypeText,
 }, {
   key: 'createdAt',
-  title: '兑换日期',
+  title: 'Create Time',
   dataIndex: 'coupon.createdAt',
   render: date(),
 }, {
   key: 'expiredAt',
-  title: '过期时间',
+  title: 'Expire Time',
   dataIndex: 'coupon.expiredAt',
   render: date(),
 }, {
   key: 'availability',
-  title: '状态',
+  title: 'Availability',
   dataIndex: 'availability',
   render: getCouponAvailabilityText,
 }];
@@ -74,25 +74,25 @@ export default compose(
   }),
   withProps(({ user: { id: userId } }) => ({
     orderColumns: [{
-      title: '订单号',
+      title: 'Order Number',
       key: 'orderNo',
       dataIndex: 'orderNo',
     }, {
-      title: '收货电话',
+      title: 'Receiver Phone',
       key: 'receiverPhone',
       dataIndex: 'receiverPhone',
     }, {
-      title: '原价',
+      title: 'Total',
       key: 'total',
       dataIndex: 'total',
       render: price(),
     }, {
-      title: '应付款',
+      title: 'Grand Total',
       key: 'grandTotal',
       dataIndex: 'grandTotal',
       render: price(),
     }, {
-      title: '状态',
+      title: 'Status',
       key: 'status',
       dataIndex: 'status',
       render: (
@@ -100,12 +100,12 @@ export default compose(
         { payment: { status: paymentStatus }, shippingCompany, shippingNumber },
       ) => getOrderStatusText(orderStatus, paymentStatus, shippingCompany, shippingNumber),
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: ({ id }) => (
         <div>
           <Link to={`/shop/order/view/${id}?backUrl=/system/customer/view/${userId}`}>
-            查看
+            View
           </Link>
         </div>
       ),
@@ -114,7 +114,7 @@ export default compose(
 )(({ user, coupons, orders, orderColumns }) => (
   <div>
     <List
-      title="基本信息"
+      title="Basic Info"
       dataSource={user}
       items={items}
       labelLayout={{ span: 4, offset: 4 }}
@@ -122,7 +122,7 @@ export default compose(
 
     <Row>
       <Col span={16} offset={4}>
-        <h3 style={{ margin: '10px 0' }}>优惠券信息</h3>
+        <h3 style={{ margin: '10px 0' }}>Coupon Info</h3>
 
         <Table
           dataSource={coupons}
@@ -134,7 +134,7 @@ export default compose(
 
     <Row>
       <Col span={16} offset={4}>
-        <h3 style={{ margin: '10px 0' }}>订单信息</h3>
+        <h3 style={{ margin: '10px 0' }}>Order Info</h3>
 
         <Table
           dataSource={orders}

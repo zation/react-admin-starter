@@ -56,7 +56,7 @@ export default compose(
         size="small"
         disabled={!dirty}
       >
-        {isEditing ? '保存' : '添加'}
+        {isEditing ? 'Save' : 'Add'}
       </Button>
     </Item>
 
@@ -69,7 +69,7 @@ export default compose(
             onClick={reset}
             disabled={!dirty}
           >
-            重置
+            Reset
           </Button>
         </Item>
       ) : null}
@@ -78,7 +78,7 @@ export default compose(
       ? (
         <Item>
           <Popconfirm
-            title="确认删除该类型吗？"
+            title="Confirm to delete this category?"
             onConfirm={removeProductCategory}
           >
             <Button
@@ -86,7 +86,7 @@ export default compose(
               htmlType="button"
               size="small"
             >
-              删除
+              Delete
             </Button>
           </Popconfirm>
         </Item>

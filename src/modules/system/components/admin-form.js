@@ -42,14 +42,14 @@ export default compose(
       ? (
         <Field
           name="username"
-          label="用户名"
+          label="Username"
           component={PlainText}
           layout={layout}
         />
       ) : (
         <Field
           name="username"
-          label="用户名"
+          label="Username"
           component={Input}
           type="text"
           required
@@ -59,7 +59,7 @@ export default compose(
       )}
     <Field
       name="nickname"
-      label="昵称"
+      label="Nickname"
       component={Input}
       type="text"
       required
@@ -77,7 +77,7 @@ export default compose(
     />
     {isEdit ? null : <Field
       name="password"
-      label="密码"
+      label="Password"
       component={Input}
       type="password"
       required
@@ -86,7 +86,7 @@ export default compose(
     />}
     {isEdit ? null : <Field
       name="confirmedPassword"
-      label="重复密码"
+      label="Repeat Password"
       component={Input}
       type="password"
       required
@@ -95,7 +95,7 @@ export default compose(
     />}
     <Field
       name="status"
-      label="激活状态"
+      label="Status"
       component={RadioGroup}
       options={userStatusOptions}
       required
@@ -104,7 +104,7 @@ export default compose(
     />
     <Field
       name="roleKey"
-      label="权限组"
+      label="Role"
       component={RadioGroup}
       options={roleOptions}
       required
@@ -113,9 +113,9 @@ export default compose(
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
-      <Button onClick={reset}>重置</Button>
+      <Button onClick={reset}>Reset</Button>
     </Item>
   </Form>
 ));

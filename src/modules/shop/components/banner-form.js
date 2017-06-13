@@ -39,35 +39,35 @@ export default compose(
   >
     <Field
       name="image"
-      label="图片"
+      label="Image"
       component={SingleUploader}
       style={{ width: 450, height: 225 }}
       accept="image/*"
       required
       validate={required}
       layout={layout}
-      extraText="建议图片尺寸：宽 1920px，高 420px"
+      extraText="Suggested size: 1920 x 420"
     />
     <Field
       name="link"
-      label="链接"
+      label="Link"
       component={Input}
       type="text"
       layout={layout}
     />
     <Field
       name="target"
-      label="打开方式"
+      label="Target"
       component={Select}
       options={linkTargetOptions}
       layout={layout}
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to={listLink}>返回列表</Link>
+        <Link to={listLink}>Back</Link>
       </Button>
     </Item>
   </Form>

@@ -15,7 +15,7 @@ export default compose(
   ),
   withHandlers({
     update: ({ update }) => (values) =>
-      update(values).then(() => Message.success('编辑帐号成功！')),
+      update(values).then(() => Message.success('Update profile success!')),
   }),
   setDisplayName(__filename),
 )(({ update, initialValues }) => (

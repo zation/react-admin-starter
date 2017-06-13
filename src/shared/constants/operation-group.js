@@ -23,10 +23,10 @@ export const ACCOUNT = 'ACCOUNT';
 export const SHOP = 'SHOP';
 
 const textMap = {
-  [SYSTEM]: '系统管理',
+  [SYSTEM]: 'System',
   [CONTENT]: 'Content',
-  [ACCOUNT]: '个人帐号管理',
-  [SHOP]: '电商模块',
+  [ACCOUNT]: 'Account',
+  [SHOP]: 'Shop',
 };
 
 export const getOperationGroupText = group => textMap[group];

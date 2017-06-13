@@ -11,7 +11,7 @@ export default (state, { params: { type } }) => {
   return {
     type,
     name: type === FIXED
-      ? `满 ${condition || '--'} 减 ${discount || '--'}`
-      : `${percentage()(discount)} 折扣`,
+      ? `More than ${condition || '--'} reduce ${discount || '--'}`
+      : `${percentage()(discount)} discount`,
   };
 };

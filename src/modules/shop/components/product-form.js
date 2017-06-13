@@ -42,7 +42,7 @@ export default compose(
   >
     <Field
       name="name"
-      label="名称"
+      label="Name"
       component={Input}
       type="text"
       required
@@ -51,7 +51,7 @@ export default compose(
     />
     <Field
       name="cover"
-      label="封面"
+      label="Cover"
       component={SingleUploader}
       style={{ width: 300, height: 300 }}
       accept="image/*"
@@ -61,7 +61,7 @@ export default compose(
     />
     <Field
       name="images"
-      label="幻灯片"
+      label="Gallery"
       component={MultipleUploader}
       accept="image/*"
       required
@@ -79,7 +79,7 @@ export default compose(
     />
     <Field
       name="price"
-      label="销售价"
+      label="Sales Price"
       component={InputNumber}
       required
       validate={required}
@@ -87,14 +87,14 @@ export default compose(
     />
     <Field
       name="originalPrice"
-      label="原价"
+      label="Original Price"
       component={InputNumber}
-      validate={greaterOrEqual('price', '原价不能小于销售价')}
+      validate={greaterOrEqual('price', 'Original price should less than sales price')}
       layout={layout}
     />
     <Field
       name="capacity"
-      label="总量"
+      label="Capacity"
       component={InputNumber}
       required
       validate={required}
@@ -102,7 +102,7 @@ export default compose(
     />
     <Field
       name="productCategory.id"
-      label="类别"
+      label="Category"
       component={Select}
       options={productCategoryOptions}
       required
@@ -112,36 +112,36 @@ export default compose(
 
     <Field
       name="isRecommended"
-      label="是否推荐"
+      label="Recommendation"
       component={RadioGroup}
       options={[{
         value: true,
-        text: '是',
+        text: 'Yes',
       }, {
         value: false,
-        text: '否',
+        text: 'No',
       }]}
       layout={layout}
     />
     <Field
       name="status"
-      label="是否发布"
+      label="Publish"
       component={RadioGroup}
       options={[{
         value: PUBLISHED,
-        text: '是',
+        text: 'Yes',
       }, {
         value: DRAFT,
-        text: '否',
+        text: 'No',
       }]}
       layout={layout}
     />
 
     <Item {...operatorLayout} >
-      <Button type="primary" htmlType="submit" loading={submitting}>确定</Button>
+      <Button type="primary" htmlType="submit" loading={submitting}>Submit</Button>
       &nbsp;&nbsp;
       <Button>
-        <Link to="/shop/product/list">返回列表</Link>
+        <Link to="/shop/product/list">Back</Link>
       </Button>
     </Item>
   </Form>

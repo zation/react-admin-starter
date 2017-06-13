@@ -22,12 +22,12 @@ export default state => {
     users,
     statsItems: [{
       key: 'total',
-      title: '用户总数',
+      title: 'Total',
       data: total,
       type: NUMBER,
     }, {
       key: 'gender',
-      title: '性别',
+      title: 'Gender',
       type: PIE,
       data: [{
         name: getGenderText(MALE),
@@ -40,7 +40,7 @@ export default state => {
       }],
     }, {
       key: 'status',
-      title: '状态',
+      title: 'Status',
       type: PIE,
       data: [{
         name: getUserStatusText(ACTIVE),

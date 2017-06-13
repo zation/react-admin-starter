@@ -52,7 +52,7 @@ export default compose(
 )(({ banners, forward, backward, remove }) => (
   <div>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
-      <Link to="/shop/banner/create">添加横幅</Link>
+      <Link to="/shop/banner/create">Create</Link>
     </Button>
 
     <List

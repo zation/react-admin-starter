@@ -6,8 +6,8 @@ export const INACTIVE = 'INACTIVE';
 export const ACTIVE = 'ACTIVE';
 
 const textMap = {
-  [INACTIVE]: '不可领取',
-  [ACTIVE]: '可领取',
+  [INACTIVE]: 'Inactive',
+  [ACTIVE]: 'Active',
 };
 
 export const getCouponStatusText = status => textMap[status];

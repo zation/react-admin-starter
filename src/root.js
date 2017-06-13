@@ -3,6 +3,8 @@ import React from 'react';
 import { setPropTypes, compose, setDisplayName } from 'recompose';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
+import { LocaleProvider } from 'antd';
+import enUS from 'antd/lib/locale-provider/en_US';
 import createRoutes from './create-routes';
 
 import './antd_.less';
@@ -15,7 +17,9 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ store, history }) => (
-  <Provider store={store}>
-    <Router history={history} routes={createRoutes(store)} />
-  </Provider>
+  <LocaleProvider locale={enUS}>
+    <Provider store={store}>
+      <Router history={history} routes={createRoutes(store)} />
+    </Provider>
+  </LocaleProvider>
 ));

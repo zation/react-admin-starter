@@ -19,17 +19,17 @@ export default state => {
     statsItems: [{
       key: 'total',
       type: NUMBER,
-      title: '文章总数',
+      title: 'Content Total',
       data: total,
     }, {
       key: 'viewCount',
       type: NUMBER,
-      title: '总阅读量',
+      title: 'View Count',
       data: sumBy(prop('viewCount'))(contents),
     }, {
       key: 'status',
       type: PIE,
-      title: '状态',
+      title: 'Status',
       data: [{
         name: getContentStatusText(PUBLISHED),
         value: flow(

@@ -1,12 +1,12 @@
 import { isUndefined } from 'lodash/fp';
 
-export const required = value => (value ? undefined : '必填项');
+export const required = value => (value ? undefined : 'Required field');
 
 export const samePasswordAs = (fieldName) => (value, filedValues) =>
-  (value === filedValues[fieldName] ? undefined : '两次输入密码不一致');
+  (value === filedValues[fieldName] ? undefined : 'Passwords are not the same');
 
 export const minLength = length => value => (value && value.length < length
-  ? `需要至少${length}个字符` : undefined);
+  ? `Please input at lease ${length} characters` : undefined);
 
-export const greaterOrEqual = (fieldName, errorMessage = '输入值过低') => (value, fieldValues) =>
+export const greaterOrEqual = (fieldName, errorMessage = 'Input number too small') => (value, fieldValues) =>
   (isUndefined(value) || value >= fieldValues[fieldName] ? undefined : errorMessage);

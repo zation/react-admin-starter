@@ -7,16 +7,16 @@ import { time } from 'shared/utils/formatter';
 import { getCouponAvailabilityText } from 'shared/constants/coupon-availability';
 
 const columns = [{
-  title: '用户名',
+  title: 'Username',
   dataIndex: 'user.username',
   key: 'username',
 }, {
-  title: '兑换时间',
+  title: 'Create Time',
   dataIndex: 'createdAt',
   key: 'createdAt',
   render: time(),
 }, {
-  title: '状态',
+  title: 'Status',
   dataIndex: 'availability',
   key: 'availability',
   render: getCouponAvailabilityText,
@@ -49,12 +49,12 @@ export default compose(
         readUserHistory({ id }).then(() => setLoading(false));
       }}
     >
-      兑换记录
+      Record
     </a>
     <Modal
       visible={visible}
       title={name}
-      footer={<Button onClick={() => setVisible(false)}>关闭</Button>}
+      footer={<Button onClick={() => setVisible(false)}>Close</Button>}
       onCancel={() => setVisible(false)}
     >
       <Table dataSource={history} columns={columns} loading={loading} rowKey="id" />

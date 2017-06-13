@@ -24,11 +24,11 @@ export default compose(
   withHandlers({
     activateCoupon: ({ activateCoupon }) => ({ id }) => () =>
       activateCoupon({ id }).then(() => {
-        Message.success('已开启激活');
+        Message.success('Activated');
       }),
     deactivateCoupon: ({ deactivateCoupon }) => ({ id }) => () =>
       deactivateCoupon({ id }).then(() => {
-        Message.success('已禁止激活');
+        Message.success('Inactivated');
       }),
     readUserHistory: ({ readUserHistory }) => ({ id }) =>
       readUserHistory({ id }),
@@ -38,10 +38,10 @@ export default compose(
     <Stats items={statsItems} />
     <div style={{ marginBottom: -30 }}>
       <Button type="primary" size="large">
-        <Link to={`/shop/coupon/create/${FIXED}`}>创建满减礼卷</Link>
+        <Link to={`/shop/coupon/create/${FIXED}`}>Create fixed coupon</Link>
       </Button>&nbsp;&nbsp;
       <Button type="primary" size="large">
-        <Link to={`/shop/coupon/create/${PERCENTAGE}`}>创建折扣礼卷</Link>
+        <Link to={`/shop/coupon/create/${PERCENTAGE}`}>Create percentage coupon</Link>
       </Button>
     </div>
     <List

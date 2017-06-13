@@ -7,9 +7,9 @@ export const PUBLISHED = 'PUBLISHED';
 export const DELETED = 'DELETED';
 
 const textMap = {
-  [DRAFT]: '已下架',
-  [PUBLISHED]: '已上架',
-  [DELETED]: '已删除',
+  [DRAFT]: 'Draft',
+  [PUBLISHED]: 'Published',
+  [DELETED]: 'Deleted',
 };
 
 export const getProductStatusText = status => textMap[status];

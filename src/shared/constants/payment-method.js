@@ -6,8 +6,8 @@ export const ALIPAY = 'ALIPAY';
 export const WECHAT_PAY = 'WECHAT_PAY';
 
 const textMap = {
-  [ALIPAY]: '支付宝',
-  [WECHAT_PAY]: '微信支付',
+  [ALIPAY]: 'Alipay',
+  [WECHAT_PAY]: 'Wechat',
 };
 
 export const getPaymentMethodText = paymentMethod => textMap[paymentMethod];

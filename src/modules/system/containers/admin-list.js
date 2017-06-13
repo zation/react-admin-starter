@@ -23,13 +23,13 @@ export default compose(
       id,
       status: status === ACTIVE ? INACTIVE : ACTIVE,
     }).then(() => {
-      Message.success('已更新管理员用户状态');
+      Message.success('Update admin success!');
     }),
   }),
 )(({ users, toggleUserStatus }) => (
   <div>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
-      <Link to="/system/admin/create">添加后台帐号</Link>
+      <Link to="/system/admin/create">Create</Link>
     </Button>
 
     <List users={users} toggleUserStatus={toggleUserStatus} />

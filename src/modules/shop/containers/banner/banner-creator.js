@@ -26,14 +26,14 @@ export default compose(
           order: maxOrder + 1,
         },
       ]).then(() => {
-        Message.success('创建横幅成功！');
+        Message.success('Create banner success!');
         push('/shop/banner/list');
       }),
   }),
 )(({ create }) => (
   <div>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
-      <Link to="/shop/banner/create">添加横幅</Link>
+      <Link to="/shop/banner/create">Create</Link>
     </Button>
 
     <Form

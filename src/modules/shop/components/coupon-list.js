@@ -21,38 +21,38 @@ export default compose(
   }),
   withProps(({ activateCoupon, deactivateCoupon, readUserHistory }) => ({
     columns: [{
-      title: '名称',
+      title: 'Name',
       key: 'name',
       dataIndex: 'name',
     }, {
-      title: '类型',
+      title: 'Type',
       key: 'type',
       dataIndex: 'type',
       render: getCouponTypeText,
     }, {
-      title: '兑换码',
+      title: 'Code',
       key: 'code',
       dataIndex: 'code',
     }, {
-      title: '库存',
+      title: 'Inventory',
       key: 'inventory',
       dataIndex: 'inventory',
     }, {
-      title: '总量',
+      title: 'Capacity',
       key: 'capacity',
       dataIndex: 'capacity',
     }, {
-      title: '状态',
+      title: 'Status',
       key: 'status',
       dataIndex: 'status',
       render: getCouponStatusText,
     }, {
-      title: '过期时间',
+      title: 'Expire Time',
       key: 'expiredAt',
       dataIndex: 'expiredAt',
       render: date(),
     }, {
-      title: '领取开关',
+      title: 'Activation',
       key: 'activation',
       render: ({ id, status }) => (
         <div>
@@ -64,13 +64,13 @@ export default compose(
         </div>
       ),
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operators',
       render: ({ id, name, history }) => (
         <div>
           <Modal readUserHistory={readUserHistory} id={id} name={name} history={history} />
           &nbsp;&nbsp;
-          <Link to={`/shop/coupon/edit/${id}`}>编辑</Link>
+          <Link to={`/shop/coupon/edit/${id}`}>Edit</Link>
         </div>
       ),
     }],
@@ -78,7 +78,7 @@ export default compose(
 )(({ coupons, columns, search, query }) => (
   <div>
     <Search
-      placeholder="请输入礼券名称、兑换码进行搜索"
+      placeholder="Please search by name, code"
       search={search}
     />
 

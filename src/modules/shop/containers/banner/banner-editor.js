@@ -23,7 +23,7 @@ export default compose(
           order,
         },
       ]).then(() => {
-        Message.success('编辑横幅成功！');
+        Message.success('Edit banner success!');
       }),
   }),
 )(({ update, initialValues }) => (

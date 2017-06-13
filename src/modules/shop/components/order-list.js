@@ -17,29 +17,29 @@ export default compose(
   }),
   withProps(({ closeOrder, completeOrder }) => ({
     columns: [{
-      title: '订单号',
+      title: 'Order Number',
       key: 'orderNo',
       dataIndex: 'orderNo',
     }, {
-      title: '用户名',
+      title: 'Username',
       key: 'user.username',
       dataIndex: 'user.username',
     }, {
-      title: '收货电话',
+      title: 'Receiver Phone',
       key: 'receiverPhone',
       dataIndex: 'receiverPhone',
     }, {
-      title: '原价',
+      title: 'Total',
       key: 'total',
       dataIndex: 'total',
       render: price(),
     }, {
-      title: '应付款',
+      title: 'Grand Total',
       key: 'grandTotal',
       dataIndex: 'grandTotal',
       render: price(),
     }, {
-      title: '状态',
+      title: 'Status',
       key: 'status',
       dataIndex: 'status',
       render: (
@@ -47,31 +47,31 @@ export default compose(
         { payment: { status: paymentStatus }, shippingCompany, shippingNumber },
       ) => getOrderStatusText(orderStatus, paymentStatus, shippingCompany, shippingNumber),
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: ({ id, status }) => (
         <div>
-          <Link to={`/shop/order/view/${id}`}>查看</Link>
+          <Link to={`/shop/order/view/${id}`}>View Details</Link>
           &nbsp;&nbsp;
-          <Link to={`/shop/order/edit/${id}`}>编辑</Link>
+          <Link to={`/shop/order/edit/${id}`}>Edit</Link>
           &nbsp;&nbsp;
           {status !== CLOSED && status !== FINISHED
             ? (
               <Popconfirm
-                title="确定关闭该订单吗？"
+                title="Confirm to close this order?"
                 onConfirm={closeOrder({ id })}
               >
-                <a>关闭</a>
+                <a>Close</a>
               </Popconfirm>
             ) : null}
           &nbsp;&nbsp;
           {status !== CLOSED && status !== FINISHED
             ? (
               <Popconfirm
-                title="确定完成该订单吗？"
+                title="Confirm to complete this order?"
                 onConfirm={completeOrder({ id })}
               >
-                <a>完成</a>
+                <a>Complete</a>
               </Popconfirm>
             ) : null}
         </div>
@@ -82,7 +82,7 @@ export default compose(
 )(({ orders, columns, search, query }) => (
   <div>
     <Search
-      placeholder="请输入订单号、用户名、收货电话进行搜索"
+      placeholder="Please search by order number, username, receiver phone"
       search={search}
     />
 

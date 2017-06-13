@@ -20,39 +20,39 @@ export default compose(
   }),
   withProps(({ remove, forward, backward, banners, editLink }) => ({
     columns: [{
-      title: '序号',
+      title: 'Order',
       key: 'order',
       dataIndex: 'order',
     }, {
-      title: '图片',
+      title: 'Image',
       key: 'image',
       dataIndex: 'image',
       render: (image) => <Image width={120} src={image} alt="cover" style={{ width: 120 }} />,
     }, {
-      title: '链接',
+      title: 'Link',
       key: 'link',
       dataIndex: 'link',
     }, {
-      title: '打开方式',
+      title: 'Target',
       key: 'target',
       dataIndex: 'target',
       render: getLinkTargetText,
     }, {
-      title: '操作',
+      title: 'Operation',
       key: 'operation',
       render: ({ order }) => (
         <div>
-          <a disabled={order === 1} onClick={forward({ order })}>顺序提前</a>
+          <a disabled={order === 1} onClick={forward({ order })}>Add Order</a>
           &nbsp;&nbsp;
-          <a disabled={size(banners) === order} onClick={backward({ order })}>顺序推后</a>
+          <a disabled={size(banners) === order} onClick={backward({ order })}>Reduce Order</a>
           &nbsp;&nbsp;
-          <Link to={`${editLink}/${order}`}>编辑</Link>
+          <Link to={`${editLink}/${order}`}>Edit</Link>
           &nbsp;&nbsp;
           <Popconfirm
-            title="确定删除该横幅吗？"
+            title="Confirm to remove this banner?"
             onConfirm={remove({ order })}
           >
-            <a>删除</a>
+            <a>Delete</a>
           </Popconfirm>
         </div>
       ),

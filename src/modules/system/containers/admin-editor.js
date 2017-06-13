@@ -17,7 +17,7 @@ export default compose(
     updateUser: ({ updateUser, userId }) => values => updateUser({
       id: userId,
       ...values,
-    }).then(() => Message.info('修改用户成功！')),
+    }).then(() => Message.info('Edit user success!')),
   }),
   setDisplayName(__filename),
 )(({ updateUser, roleOptions, initialValues }) => (
