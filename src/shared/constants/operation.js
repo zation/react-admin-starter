@@ -29,18 +29,18 @@ const textMap = {
 };
 
 const linkMap = {
-  [MANAGE_ADMIN]: 'system/admin/list',
-  [MANAGE_CUSTOMER]: 'system/customer/list',
-  [MANAGE_ROLE]: 'system/role/list',
-  [CREATE_CONTENT]: 'content/create',
-  [MANAGE_CONTENT]: 'content/list',
-  [MANAGE_PROFILE]: 'account/profile',
-  [MANAGE_PASSWORD]: 'account/password',
-  [MANAGE_SHOP_BANNER]: 'shop/banner/list',
-  [MANAGE_PRODUCT_CATEGORY]: 'shop/category/list',
-  [MANAGE_PRODUCT]: 'shop/product/list',
-  [MANAGE_COUPON]: 'shop/coupon/list',
-  [MANAGE_ORDER]: 'shop/order/list',
+  [MANAGE_ADMIN]: '/system/admin/list',
+  [MANAGE_CUSTOMER]: '/system/customer/list',
+  [MANAGE_ROLE]: '/system/role/list',
+  [CREATE_CONTENT]: '/content/create',
+  [MANAGE_CONTENT]: '/content/list',
+  [MANAGE_PROFILE]: '/account/profile',
+  [MANAGE_PASSWORD]: '/account/password',
+  [MANAGE_SHOP_BANNER]: '/shop/banner/list',
+  [MANAGE_PRODUCT_CATEGORY]: '/shop/category/list',
+  [MANAGE_PRODUCT]: '/shop/product/list',
+  [MANAGE_COUPON]: '/shop/coupon/list',
+  [MANAGE_ORDER]: '/shop/order/list',
 };
 
 export const getOperationText = operation => textMap[operation];
