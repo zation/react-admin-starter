@@ -8,12 +8,14 @@
     "transform-object-rest-spread",
     "transform-class-properties",
     "transform-exponentiation-operator",
-    "react-hot-loader/babel",
     ["import", {
       "libraryName": "antd"
     }]
   ],
   "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel"]
+    },
     "mocker": {
       "presets": [
         ["env", {
