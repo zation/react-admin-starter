@@ -70,7 +70,7 @@
     "morgan": "1.8.2",
     "nodemon": "1.11.0",
     "postcss-loader": "2.0.6",
-    "react-hot-loader": "v3.0.0-beta.7",
+    "react-hot-loader": "3.0.0-beta.7",
     "redux-logger": "3.0.6",
     "style-loader": "0.18.2",
     "url-loader": "0.5.9",
