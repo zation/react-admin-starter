@@ -78,7 +78,7 @@ export default compose(
   }),
 )(({ items }) => (
   <div className={style.Root}>
-    {map(({ type, key, title, width, height, data, name , formatter}) => (
+    {map(({ type, key, title, width, height, data, name, formatter }) => (
       <Card
         key={key}
         title={title}

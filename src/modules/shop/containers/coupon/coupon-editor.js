@@ -16,7 +16,7 @@ export default compose(
     updateCoupon: updateCouponAction,
   }),
   withHandlers({
-    updateCoupon: ({ updateCoupon, couponId }) => (value) =>
+    updateCoupon: ({ updateCoupon, couponId }) => value =>
       updateCoupon({
         id: couponId,
         ...value,

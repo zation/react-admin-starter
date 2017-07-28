@@ -12,5 +12,5 @@ export const readAll = createAction(
 
 export const updateAll = createAction(
   UPDATE_ALL,
-  (banners) => put('/shop/banner', banners),
+  banners => put('/shop/banner', banners),
 );

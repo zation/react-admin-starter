@@ -14,7 +14,7 @@ export default compose(
   }),
   setDisplayName(__filename),
   withHandlers({
-    onSubmit: ({ updateProduct, productId }) => (values) => updateProduct({
+    onSubmit: ({ updateProduct, productId }) => values => updateProduct({
       ...values,
       id: productId,
     }).then(() => {

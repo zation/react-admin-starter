@@ -16,7 +16,7 @@ export default compose(
   }),
   setDisplayName(__filename),
   withHandlers({
-    onSubmit: ({ createContent, push }) => (values) => createContent(values)
+    onSubmit: ({ createContent, push }) => values => createContent(values)
       .then(() => {
         Message.success('Create content success!');
         push('/content/list');

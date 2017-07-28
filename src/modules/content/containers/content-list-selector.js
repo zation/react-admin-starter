@@ -5,7 +5,7 @@ import { NUMBER, PIE } from 'shared/constants/stats-type';
 import { DELETED, PUBLISHED, DRAFT, getContentStatusText } from 'shared/constants/content-status';
 import { BLUE, YELLOW } from 'shared/constants/color';
 
-export default state => {
+export default (state) => {
   const contents = flow(
     getEntityArray('content'),
     reject(propEq('status', DELETED)),

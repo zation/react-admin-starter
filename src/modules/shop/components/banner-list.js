@@ -27,7 +27,7 @@ export default compose(
       title: 'Image',
       key: 'image',
       dataIndex: 'image',
-      render: (image) => <Image width={120} src={image} alt="cover" style={{ width: 120 }} />,
+      render: image => <Image width={120} src={image} alt="cover" style={{ width: 120 }} />,
     }, {
       title: 'Link',
       key: 'link',
@@ -42,9 +42,9 @@ export default compose(
       key: 'operation',
       render: ({ order }) => (
         <div>
-          <a disabled={order === 1} onClick={forward({ order })}>Add Order</a>
+          <a role="button" tabIndex={0} disabled={order === 1} onClick={forward({ order })}>Add Order</a>
           &nbsp;&nbsp;
-          <a disabled={size(banners) === order} onClick={backward({ order })}>Reduce Order</a>
+          <a role="button" tabIndex={0} disabled={size(banners) === order} onClick={backward({ order })}>Reduce Order</a>
           &nbsp;&nbsp;
           <Link to={`${editLink}/${order}`}>Edit</Link>
           &nbsp;&nbsp;

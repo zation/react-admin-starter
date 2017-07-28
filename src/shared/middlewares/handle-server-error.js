@@ -4,7 +4,7 @@ import { map, prop } from 'lodash/fp';
 import { push } from '../entities/actions/history';
 import { THROW_SERVER_ERROR } from '../entities/actions/server-error';
 
-export default ({ dispatch }) => next => action => {
+export default ({ dispatch }) => next => (action) => {
   if (action.type === THROW_SERVER_ERROR) {
     const {
       meta: { status, ignoreGlobalWarning, ignoreAuthRedirection },

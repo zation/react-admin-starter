@@ -4,14 +4,14 @@ import fetch from '../utils/fetch';
 import getEntity from '../entities/get-entity';
 import { throwServerError } from '../entities/actions/server-error';
 
-const checkStatus = response => {
+const checkStatus = (response) => {
   if (response.status >= 200 && response.status < 300) {
     return response;
   }
   throw response;
 };
 
-const deserialize = response => {
+const deserialize = (response) => {
   const header = response.headers.get('Content-Type') || '';
   if (header.indexOf('application/json') > -1) {
     return response.json();
@@ -28,7 +28,7 @@ const handleSuccess = (dispatch, action) => response =>
 
 const handleFailed = (dispatch, { meta }) => response =>
   deserialize(response)
-    .then(data => {
+    .then((data) => {
       dispatch(throwServerError({
         errors: data,
       }, {
@@ -40,7 +40,7 @@ const handleFailed = (dispatch, { meta }) => response =>
       throw data;
     });
 
-export default ({ getState, dispatch }) => next => action => {
+export default ({ getState, dispatch }) => next => (action) => {
   const { payload } = action;
   if (payload) {
     const { url, isApi, withoutAuth, ...options } = payload;

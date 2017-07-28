@@ -18,7 +18,7 @@ export default compose(
     push: pushAction,
   }),
   withHandlers({
-    createCoupon: ({ createCoupon, push, name, type }) => (value) =>
+    createCoupon: ({ createCoupon, push, name, type }) => value =>
       createCoupon({
         ...value,
         name,

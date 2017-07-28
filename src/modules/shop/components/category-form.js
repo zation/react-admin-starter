@@ -31,14 +31,14 @@ export default compose(
 }) => (
   <Form
     layout="inline"
-    onSubmit={handleSubmit(submit((values) => {
-      return onSubmit(values).then(action => {
+    onSubmit={handleSubmit(submit(values =>
+      onSubmit(values).then((action) => {
         if (shouldResetAfterSubmit) {
           reset();
         }
         return action;
-      });
-    }))}
+      }),
+    ))}
   >
     <Field
       name="name"

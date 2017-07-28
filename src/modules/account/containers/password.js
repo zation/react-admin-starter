@@ -15,7 +15,7 @@ export default compose(
     },
   ),
   withHandlers({
-    resetPassword: ({ resetPassword, userId }) => (values) =>
+    resetPassword: ({ resetPassword, userId }) => values =>
       resetPassword({
         ...values,
         userId,

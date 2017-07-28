@@ -15,7 +15,7 @@ export default compose(
     },
   ),
   withHandlers({
-    update: ({ update }) => (values) =>
+    update: ({ update }) => values =>
       update(values).then(() => Message.success('Update profile success!')),
   }),
   setDisplayName(__filename),

@@ -17,7 +17,7 @@ export default compose(
     updateAllBanners: updateAllBannersAction,
   }),
   withHandlers({
-    update: ({ updateAllBanners, otherBanners, order }) => (values) =>
+    update: ({ updateAllBanners, otherBanners, order }) => values =>
       updateAllBanners([
         ...otherBanners, {
           ...values,

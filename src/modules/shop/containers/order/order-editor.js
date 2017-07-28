@@ -14,7 +14,7 @@ export default compose(
     updateShipping: updateShippingAction,
   }),
   withHandlers({
-    updateShipping: ({ updateShipping, order }) => (values) =>
+    updateShipping: ({ updateShipping, order }) => values =>
       updateShipping({ id: order.id, ...values })
         .then(() => Message.success('Edit shipping info success!')),
   }),

@@ -48,6 +48,8 @@ export default compose(
         setLoading(true);
         readUserHistory({ id }).then(() => setLoading(false));
       }}
+      role="button"
+      tabIndex={0}
     >
       Record
     </a>

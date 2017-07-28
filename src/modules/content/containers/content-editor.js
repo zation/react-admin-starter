@@ -14,7 +14,7 @@ export default compose(
   }),
   setDisplayName(__filename),
   withHandlers({
-    onSubmit: ({ updateContent, contentId }) => (values) => updateContent({
+    onSubmit: ({ updateContent, contentId }) => values => updateContent({
       ...values,
       id: contentId,
     }).then(() => {

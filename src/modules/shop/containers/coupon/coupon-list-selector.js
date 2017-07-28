@@ -10,9 +10,9 @@ import { YELLOW, BLUE, GREEN, RED } from 'shared/constants/color';
 export default (state) => {
   const coupons = flow(
     getEntityArray('coupon'),
-    map((coupon) => ({
+    map(coupon => ({
       ...coupon,
-      history: map((item) => ({
+      history: map(item => ({
         ...item,
         user: getEntity(`user.${item.userId}`)(state),
       }))(coupon.history),

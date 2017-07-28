@@ -7,7 +7,7 @@ import { MALE, FEMALE, getGenderText } from 'shared/constants/gender';
 import { ACTIVE, INACTIVE, ACTIVATING, getUserStatusText } from 'shared/constants/user-status';
 import { YELLOW, GREEN, BLUE, RED } from 'shared/constants/color';
 
-export default state => {
+export default (state) => {
   const users = flow(
     getEntityArray('user'),
     filter(propEq('role.key', CUSTOMER)),

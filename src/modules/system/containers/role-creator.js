@@ -18,7 +18,7 @@ export default compose(
   ),
   withHandlers({
     createRole: ({ createRole, push }) => values => createRole(values)
-      .then(action => {
+      .then((action) => {
         Message.info('Create role success!');
         push(`/system/role/edit/${action.payload.id}`);
       }),

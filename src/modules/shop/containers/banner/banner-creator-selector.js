@@ -1,7 +1,7 @@
 import { prop, max, map, flow } from 'lodash/fp';
 import { getEntityArray } from 'shared/entities/get-entity';
 
-export default state => {
+export default (state) => {
   const banners = getEntityArray('shopBanner')(state);
 
   return {

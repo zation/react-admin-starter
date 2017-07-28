@@ -20,7 +20,7 @@ export default compose(
   }),
   withHandlers({
     forward: ({ updateAllBanners, banners }) => ({ order }) => () =>
-      updateAllBanners(map(banner => {
+      updateAllBanners(map((banner) => {
         if (banner.order === order) {
           return { ...banner, order: order - 1 };
         }
@@ -30,7 +30,7 @@ export default compose(
         return banner;
       })(banners)),
     backward: ({ updateAllBanners, banners }) => ({ order }) => () =>
-      updateAllBanners(map(banner => {
+      updateAllBanners(map((banner) => {
         if (banner.order === order) {
           return { ...banner, order: order + 1 };
         }
@@ -42,7 +42,7 @@ export default compose(
     remove: ({ updateAllBanners, banners }) => ({ order }) => () =>
       updateAllBanners(flow(
         reject(propEq('order', order)),
-        map(banner => {
+        map((banner) => {
           if (banner.order > order) {
             return { ...banner, order: banner.order - 1 };
           }

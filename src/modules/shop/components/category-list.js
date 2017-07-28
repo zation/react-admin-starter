@@ -25,7 +25,7 @@ export default compose(
           form={`${PRODUCT_CATEGORY}${id}`}
           initialValues={{ name }}
           removeProductCategory={() => removeProductCategory({ id })}
-          onSubmit={(values) => updateProductCategory({ ...values, id })}
+          onSubmit={values => updateProductCategory({ ...values, id })}
           isEditing
         />
       ),

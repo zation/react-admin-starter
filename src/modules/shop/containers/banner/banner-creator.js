@@ -20,7 +20,7 @@ export default compose(
     push: pushAction,
   }),
   withHandlers({
-    create: ({ updateAllBanners, banners, maxOrder, push }) => (values) =>
+    create: ({ updateAllBanners, banners, maxOrder, push }) => values =>
       updateAllBanners([
         ...banners, {
           ...values,

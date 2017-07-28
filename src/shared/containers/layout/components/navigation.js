@@ -8,7 +8,6 @@ import { map } from 'lodash/fp';
 import {
   menu,
 } from 'shared/constants/operation-group';
-import style from './navigation.less';
 
 const { SubMenu, Item } = Menu;
 
@@ -20,7 +19,6 @@ export default compose(
   }),
 )(({ currentOperation, currentOperationGroup }) => (
   <Menu
-    className={style.Root}
     mode="inline"
     selectedKeys={[currentOperation]}
     defaultOpenKeys={[currentOperationGroup]}

@@ -21,19 +21,19 @@ import getEntity from '../../entities/get-entity';
 export default (state) => {
   const pathname = getEntity('history.pathname', state);
   const currentOperation = flow(
-      map(prop('children')),
-      flatten,
-      find(propEq('link', pathname)),
-      prop('key'),
-    )(menu) || find(
-      operation => {
-        if (startsWith('MANAGE')(operation)) {
-          const word = flow(toLower, split('_'), last)(operation);
-          return (new RegExp(`${word}/(list|edit|view|order|coupon)`)).test(pathname);
-        }
-        return includes(toLower(operation))(pathname);
-      },
-    )(operations);
+    map(prop('children')),
+    flatten,
+    find(propEq('link', pathname)),
+    prop('key'),
+  )(menu) || find(
+    (operation) => {
+      if (startsWith('MANAGE')(operation)) {
+        const word = flow(toLower, split('_'), last)(operation);
+        return (new RegExp(`${word}/(list|edit|view|order|coupon)`)).test(pathname);
+      }
+      return includes(toLower(operation))(pathname);
+    },
+  )(operations);
 
   return {
     currentUser: getCurrentUser(state),

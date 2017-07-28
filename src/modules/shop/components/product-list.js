@@ -24,7 +24,7 @@ export default compose(
       title: 'Cover',
       key: 'cover',
       dataIndex: 'cover',
-      render: (cover) => <Image width={120} src={cover} alt="cover" />,
+      render: cover => <Image width={120} src={cover} alt="cover" />,
     }, {
       title: 'Name',
       key: 'name',

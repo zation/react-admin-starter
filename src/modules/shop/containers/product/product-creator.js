@@ -16,7 +16,7 @@ export default compose(
   }),
   setDisplayName(__filename),
   withHandlers({
-    onSubmit: ({ createProduct, push }) => (values) => createProduct(values).then(() => {
+    onSubmit: ({ createProduct, push }) => values => createProduct(values).then(() => {
       Message.success('Create product success!');
       push('/shop/product/list');
     }),

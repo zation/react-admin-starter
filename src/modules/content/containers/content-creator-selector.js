@@ -1,6 +1,6 @@
 import getContentTagOptions from 'shared/selector-helpers/content-tag-options';
 
-export default (state) => ({
+export default state => ({
   initialValues: {
     tags: [],
   },
