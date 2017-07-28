@@ -2,8 +2,8 @@ import React from 'react';
 import { setDisplayName, compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Button, Message } from 'antd';
-import { Link } from 'react-router';
-import { push as pushAction } from 'react-router-redux';
+import Link from 'shared/components/link';
+import { push as pushAction } from 'shared/history';
 
 import {
   updateAll as updateAllBannersAction,

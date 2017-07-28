@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push as pushAction } from 'react-router-redux';
+import { push as pushAction } from 'shared/history';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { Message } from 'antd';
 
 import { ACTIVE } from 'shared/constants/user-status';
 import { login as loginAction } from 'shared/entities/actions/auth';
 import Form from '../components/login-form';
+import Layout from '../components/layout';
 
 export default compose(
   connect(
@@ -27,7 +28,7 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ login }) => (
-  <div>
+  <Layout>
     <Form onSubmit={login} />
-  </div>
+  </Layout>
 ));

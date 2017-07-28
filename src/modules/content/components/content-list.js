@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Popconfirm, Table, Switch } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import { PUBLISHED } from 'shared/constants/content-status';
 import { time } from 'shared/utils/formatter';

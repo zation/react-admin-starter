@@ -13,23 +13,23 @@ import {
   some,
 } from 'lodash/fp';
 
-import getCurrentUser from 'shared/selector-helpers/current-user';
-import { operations } from 'shared/constants/operation';
-import { menu } from 'shared/constants/operation-group';
+import getCurrentUser from '../../selector-helpers/current-user';
+import { operations } from '../../constants/operation';
+import { menu } from '../../constants/operation-group';
 
-export default (state, { location: { pathname } }) => {
+export default (state, { path }) => {
   const currentOperation = flow(
       map(prop('children')),
       flatten,
-      find(propEq('link', pathname)),
+      find(propEq('link', path)),
       prop('key'),
     )(menu) || find(
       operation => {
         if (startsWith('MANAGE')(operation)) {
           const word = flow(toLower, split('_'), last)(operation);
-          return (new RegExp(`${word}/(list|edit|view|order|coupon)`)).test(pathname);
+          return (new RegExp(`${word}/(list|edit|view|order|coupon)`)).test(path);
         }
-        return includes(toLower(operation))(pathname);
+        return includes(toLower(operation))(path);
       },
     )(operations);
 

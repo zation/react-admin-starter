@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push as pushAction } from 'react-router-redux';
+import { push as pushAction } from 'shared/history';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 
 import { register as registerAction } from 'shared/entities/actions/user';
 import Form from '../components/register-form';
+import Layout from '../components/layout';
 
 export default compose(
   connect(
@@ -19,5 +20,7 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ register }) => (
-  <Form onSubmit={register} />
+  <Layout>
+    <Form onSubmit={register} />
+  </Layout>
 ));

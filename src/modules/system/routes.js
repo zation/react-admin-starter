@@ -7,40 +7,40 @@ import RoleCreator from './containers/role-creator';
 import CustomerList from './containers/customer-list';
 import CustomerDetail from './containers/customer-detail';
 
-export default () => ({
-  path: 'system',
-  childRoutes: [{
-    path: 'admin',
-    childRoutes: [{
-      path: 'list',
+export default {
+  path: '/system',
+  children: [{
+    path: '/admin',
+    children: [{
+      path: '/list',
       component: AdminList,
     }, {
-      path: 'create',
+      path: '/create',
       component: AdminCreator,
     }, {
-      path: 'edit/:userId',
+      path: '/edit/:userId',
       component: AdminEditor,
     }],
   }, {
-    path: 'role',
-    childRoutes: [{
-      path: 'list',
+    path: '/role',
+    children: [{
+      path: '/list',
       component: RoleList,
     }, {
-      path: 'create',
+      path: '/create',
       component: RoleCreator,
     }, {
-      path: 'edit/:roleId',
+      path: '/edit/:roleId',
       component: RoleEditor,
     }],
   }, {
-    path: 'customer',
-    childRoutes: [{
-      path: 'list',
+    path: '/customer',
+    children: [{
+      path: '/list',
       component: CustomerList,
     }, {
-      path: 'view/:customerId',
+      path: '/view/:customerId',
       component: CustomerDetail,
     }],
   }],
-});
+};

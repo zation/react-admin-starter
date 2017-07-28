@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Table, Popconfirm, Switch } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import Search, { searchComposer, searchDataSource } from 'shared/components/search';
 import Image from 'shared/components/image';

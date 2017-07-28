@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
 import { compose, setDisplayName, withHandlers } from 'recompose';
+import Layout from 'shared/containers/layout';
 
 import { update as updateUserAction } from 'shared/entities/actions/user';
 import Form from '../components/admin-form';
@@ -21,12 +22,12 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ updateUser, roleOptions, initialValues }) => (
-  <div>
+  <Layout>
     <Form
       onSubmit={updateUser}
       roleOptions={roleOptions}
       initialValues={initialValues}
       isEdit
     />
-  </div>
+  </Layout>
 ));

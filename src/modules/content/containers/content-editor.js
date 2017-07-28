@@ -2,6 +2,7 @@ import React from 'react';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
+import Layout from 'shared/containers/layout';
 
 import { update as updateContentAction } from 'shared/entities/actions/content';
 import Form from '../components/content-form';
@@ -21,5 +22,7 @@ export default compose(
     }),
   }),
 )(({ onSubmit, initialValues, contentTagOptions }) => (
-  <Form onSubmit={onSubmit} initialValues={initialValues} contentTagOptions={contentTagOptions} />
+  <Layout>
+    <Form onSubmit={onSubmit} initialValues={initialValues} contentTagOptions={contentTagOptions} />
+  </Layout>
 ));

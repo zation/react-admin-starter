@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Table, Row, Col, Button } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import List from 'shared/components/list';
 import { getOrderStatusText } from 'shared/constants/order-status';

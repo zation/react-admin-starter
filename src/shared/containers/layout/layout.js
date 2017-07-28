@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { Layout, Icon } from 'antd';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import cookie from 'js-cookie';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
-import { logout as logoutAction } from 'shared/entities/actions/auth';
-import Navigation from '../components/navigation';
+import { logout as logoutAction } from '../../entities/actions/auth';
+import Navigation from './components/navigation';
 import selector from './layout-selector';
 
 import style from './layout.less';

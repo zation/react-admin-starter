@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { Message } from 'antd';
+import Layout from 'shared/containers/layout';
 
 import {
   update as updateUserAction,
@@ -27,9 +28,9 @@ export default compose(
     }),
   }),
 )(({ users, statsItems, toggleUserStatus }) => (
-  <div>
+  <Layout>
     <Stats items={statsItems} />
 
     <List users={users} toggleUserStatus={toggleUserStatus} />
-  </div>
+  </Layout>
 ));

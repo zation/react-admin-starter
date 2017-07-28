@@ -3,7 +3,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import { CONTENT } from 'shared/constants/form-name';
 import submit from 'shared/utils/submit-handler';

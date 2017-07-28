@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { Message } from 'antd';
+import Layout from 'shared/containers/layout';
 
 import { resetPassword as resetPasswordAction } from 'shared/entities/actions/user';
 import Form from '../components/password-form';
@@ -22,5 +23,7 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ resetPassword }) => (
-  <Form onSubmit={resetPassword} />
+  <Layout>
+    <Form onSubmit={resetPassword} />
+  </Layout>
 ));

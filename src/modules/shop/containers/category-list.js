@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, setDisplayName } from 'recompose';
 import { connect } from 'react-redux';
+import Layout from 'shared/containers/layout';
 
 import {
   remove as removeProductCategoryAction,
@@ -18,12 +19,12 @@ export default compose(
     createProductCategory: createProductCategoryAction,
   }),
 )(({ categories, removeProductCategory, updateProductCategory, createProductCategory }) => (
-  <div>
+  <Layout>
     <List
       categories={categories}
       removeProductCategory={removeProductCategory}
       updateProductCategory={updateProductCategory}
       createProductCategory={createProductCategory}
     />
-  </div>
+  </Layout>
 ));

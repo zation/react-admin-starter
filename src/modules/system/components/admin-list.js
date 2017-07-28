@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Table, Switch } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import Search, { searchComposer, searchDataSource } from 'shared/components/search';
 import { getUserStatusText, ACTIVE } from 'shared/constants/user-status';

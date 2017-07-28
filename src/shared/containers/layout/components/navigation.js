@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Menu } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 import { map } from 'lodash/fp';
 
 import {

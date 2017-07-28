@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
 import { compose, setDisplayName, withHandlers } from 'recompose';
-import { push as pushAction } from 'react-router-redux';
+import { push as pushAction } from 'shared/history';
+import Layout from 'shared/containers/layout';
 
 import { create as createRoleAction } from 'shared/entities/actions/role';
 import Form from '../components/role-form';
@@ -24,10 +25,10 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ createRole, initialValues }) => (
-  <div>
+  <Layout>
     <Form
       onSubmit={createRole}
       initialValues={initialValues}
     />
-  </div>
+  </Layout>
 ));

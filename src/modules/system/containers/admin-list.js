@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { Button, Message } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
+import Layout from 'shared/containers/layout';
 
 import {
   update as updateUserAction,
@@ -27,11 +28,11 @@ export default compose(
     }),
   }),
 )(({ users, toggleUserStatus }) => (
-  <div>
+  <Layout>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
       <Link to="/system/admin/create">Create</Link>
     </Button>
 
     <List users={users} toggleUserStatus={toggleUserStatus} />
-  </div>
+  </Layout>
 ));

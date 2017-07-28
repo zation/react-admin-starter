@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { setDisplayName, compose, setPropTypes, withProps, pure } from 'recompose';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 import { Popconfirm, Table } from 'antd';
 import { size } from 'lodash/fp';
 

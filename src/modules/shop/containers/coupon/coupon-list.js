@@ -2,7 +2,7 @@ import React from 'react';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Button, Message } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 
 import { FIXED, PERCENTAGE } from 'shared/constants/coupon-type';
 import {

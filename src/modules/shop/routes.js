@@ -12,58 +12,58 @@ import OrderList from './containers/order/order-list';
 import OrderDetail from './containers/order/order-detail';
 import OrderEditor from './containers/order/order-editor';
 
-export default () => ({
-  path: 'shop',
+export default {
+  path: '/shop',
   childRoutes: [{
-    path: 'banner',
+    path: '/banner',
     childRoutes: [{
-      path: 'create',
+      path: '/create',
       component: ShopBannerCreator,
     }, {
-      path: 'list',
+      path: '/list',
       component: ShopBannerList,
     }, {
-      path: 'edit/:order',
+      path: '/edit/:order',
       component: ShopBannerEditor,
     }],
   }, {
-    path: 'category/list',
+    path: '/category/list',
     component: CategoryList,
   }, {
-    path: 'product',
+    path: '/product',
     childRoutes: [{
-      path: 'list',
+      path: '/list',
       component: ProductList,
     }, {
-      path: 'create',
+      path: '/create',
       component: ProductCreator,
     }, {
-      path: 'edit/:productId',
+      path: '/edit/:productId',
       component: ProductEditor,
     }],
   }, {
-    path: 'coupon',
+    path: '/coupon',
     childRoutes: [{
-      path: 'list',
+      path: '/list',
       component: CouponList,
     }, {
-      path: 'create/:type',
+      path: '/create/:type',
       component: CouponCreator,
     }, {
-      path: 'edit/:couponId',
+      path: '/edit/:couponId',
       component: CouponEditor,
     }],
   }, {
-    path: 'order',
+    path: '/order',
     childRoutes: [{
-      path: 'list',
+      path: '/list',
       component: OrderList,
     }, {
-      path: 'view/:orderId',
+      path: '/view/:orderId',
       component: OrderDetail,
     }, {
-      path: 'edit/:orderId',
+      path: '/edit/:orderId',
       component: OrderEditor,
     }],
   }],
-});
+};

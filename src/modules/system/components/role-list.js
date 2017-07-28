@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { compose, setDisplayName, setPropTypes, withProps } from 'recompose';
 import { Table, Popconfirm } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 import { includes } from 'lodash/fp';
 
 const notAbleToModifiedKeies = ['USER_MANAGER', 'CONTENT_MANAGER', 'MARKET_MANAGER'];

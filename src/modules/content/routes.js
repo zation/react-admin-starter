@@ -2,16 +2,16 @@ import ContentList from './containers/content-list';
 import ContentCreator from './containers/content-creator';
 import ContentEditor from './containers/content-editor';
 
-export default () => ({
-  path: 'content',
-  childRoutes: [{
-    path: 'list',
+export default {
+  path: '/content',
+  children: [{
+    path: '/list',
     component: ContentList,
   }, {
-    path: 'create',
+    path: '/create',
     component: ContentCreator,
   }, {
-    path: 'edit/:contentId',
+    path: '/edit/:contentId',
     component: ContentEditor,
   }],
-});
+};

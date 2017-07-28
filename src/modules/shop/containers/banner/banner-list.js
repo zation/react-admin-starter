@@ -2,7 +2,7 @@ import React from 'react';
 import { setDisplayName, compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Button } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
 import { map, flow, reject, propEq } from 'lodash/fp';
 
 import {

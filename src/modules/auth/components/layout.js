@@ -1,7 +1,7 @@
 import React from 'react';
 import { compose, setDisplayName } from 'recompose';
 
-import Footer from '../../layout/components/footer';
+import Footer from 'shared/containers/layout/components/footer';
 
 import style from './layout.less';
 

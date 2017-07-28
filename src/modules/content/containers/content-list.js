@@ -2,7 +2,8 @@ import React from 'react';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Button, Message } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
+import Layout from 'shared/containers/layout';
 
 import { remove as removeContentAction, update as updateContentAction } from 'shared/entities/actions/content';
 import { PUBLISHED, DRAFT } from 'shared/constants/content-status';
@@ -31,7 +32,7 @@ export default compose(
     }),
   }),
 )(({ contents, removeContent, toggleContentStatus, toggleRecommendation, statsItems }) => (
-  <div>
+  <Layout>
     <Stats items={statsItems} />
 
     <div style={{ marginBottom: -30 }}>
@@ -45,5 +46,5 @@ export default compose(
       toggleContentStatus={toggleContentStatus}
       toggleRecommendation={toggleRecommendation}
     />
-  </div>
+  </Layout>
 ));

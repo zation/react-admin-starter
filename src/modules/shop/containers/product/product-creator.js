@@ -2,7 +2,8 @@ import React from 'react';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
-import { push as pushAction } from 'react-router-redux';
+import { push as pushAction } from 'shared/history';
+import Layout from 'shared/containers/layout';
 
 import { create as createProductAction } from 'shared/entities/actions/product';
 import Form from '../../components/product-form';
@@ -25,9 +26,11 @@ export default compose(
   productCategoryOptions,
   initialValues,
 }) => (
-  <Form
-    onSubmit={onSubmit}
-    productCategoryOptions={productCategoryOptions}
-    initialValues={initialValues}
-  />
+  <Layout>
+    <Form
+      onSubmit={onSubmit}
+      productCategoryOptions={productCategoryOptions}
+      initialValues={initialValues}
+    />
+  </Layout>
 ));

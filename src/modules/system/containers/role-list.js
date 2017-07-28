@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { compose, setDisplayName } from 'recompose';
 import { Button } from 'antd';
-import { Link } from 'react-router';
+import Link from 'shared/components/link';
+import Layout from 'shared/containers/layout';
 
 import { remove as removeRoleAction } from 'shared/entities/actions/role';
 import List from '../components/role-list';
@@ -14,11 +15,11 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ roles, removeRole }) => (
-  <div>
+  <Layout>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
       <Link to="/system/role/create">Create</Link>
     </Button>
 
     <List roles={roles} removeRole={removeRole} />
-  </div>
+  </Layout>
 ));

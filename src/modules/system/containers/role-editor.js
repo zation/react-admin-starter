@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
 import { compose, setDisplayName, withHandlers } from 'recompose';
+import Layout from 'shared/containers/layout';
 
 import { update as updateRoleAction } from 'shared/entities/actions/role';
 import Form from '../components/role-form';
@@ -21,10 +22,10 @@ export default compose(
   }),
   setDisplayName(__filename),
 )(({ updateRole, initialValues }) => (
-  <div>
+  <Layout>
     <Form
       onSubmit={updateRole}
       initialValues={initialValues}
     />
-  </div>
+  </Layout>
 ));
