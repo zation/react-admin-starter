@@ -7,4 +7,4 @@ export const actionTypeCreator = filename => actionName => `~${filename}#${actio
 export const createAction = (type, payloadCreator, metaCreator) =>
   originalCreateAction(type, payloadCreator, metaCreator || (data => data));
 
-export { handleActions } from 'redux-actions';
+export { handleActions, combineActions } from 'redux-actions';

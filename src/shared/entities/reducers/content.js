@@ -1,6 +1,6 @@
 import merge from '../merge';
 import remove from '../remove';
-import { handleActions } from '../../utils/redux-actions';
+import { handleActions, combineActions } from '../../utils/redux-actions';
 import {
   READ_ALL,
   READ_ONE,
@@ -10,15 +10,11 @@ import {
 } from '../actions/content';
 import { content } from '../schema';
 
-export default handleActions({
-  [READ_ALL]: merge(content),
+export default {
+  content: handleActions({
+    [combineActions(READ_ALL, READ_ONE, CREATE, UPDATE)]: merge(content),
 
-  [READ_ONE]: merge(content),
+    [REMOVE]: remove(content),
 
-  [CREATE]: merge(content),
-
-  [UPDATE]: merge(content),
-
-  [REMOVE]: remove(content),
-
-}, {});
+  }, {}),
+};

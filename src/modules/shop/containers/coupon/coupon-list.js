@@ -11,6 +11,7 @@ import {
   readUserHistory as readUserHistoryAction,
 } from 'shared/entities/actions/coupon';
 import Stats from 'shared/components/stats';
+import Layout from 'shared/containers/layout';
 import selector from './coupon-list-selector';
 import List from '../../components/coupon-list';
 
@@ -34,7 +35,7 @@ export default compose(
       readUserHistory({ id }),
   }),
 )(({ coupons, activateCoupon, deactivateCoupon, readUserHistory, statsItems }) => (
-  <div>
+  <Layout>
     <Stats items={statsItems} />
     <div style={{ marginBottom: -30 }}>
       <Button type="primary" size="large">
@@ -50,5 +51,5 @@ export default compose(
       deactivateCoupon={deactivateCoupon}
       readUserHistory={readUserHistory}
     />
-  </div>
+  </Layout>
 ));

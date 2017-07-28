@@ -6,6 +6,7 @@ import { Message } from 'antd';
 import {
   update as updateCouponAction,
 } from 'shared/entities/actions/coupon';
+import Layout from 'shared/containers/layout';
 import selector from './coupon-editor-selector';
 import Form from '../../components/coupon-form';
 
@@ -24,7 +25,7 @@ export default compose(
       }),
   }),
 )(({ initialValues, updateCoupon, name, type, code }) => (
-  <div>
+  <Layout>
     <Form
       isEditing
       name={name}
@@ -33,5 +34,5 @@ export default compose(
       initialValues={initialValues}
       onSubmit={updateCoupon}
     />
-  </div>
+  </Layout>
 ));

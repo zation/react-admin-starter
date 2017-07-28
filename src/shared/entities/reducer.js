@@ -11,19 +11,21 @@ import productCategory from './reducers/product-category';
 import product from './reducers/product';
 import coupon from './reducers/coupon';
 import order from './reducers/order';
+import history from './reducers/history';
 
 export default {
   entities: combineReducers({
-    serverError,
-    auth,
-    user,
-    role,
-    content,
-    contentTag,
-    shopBanner,
-    productCategory,
-    product,
-    coupon,
-    order,
+    ...serverError,
+    ...auth,
+    ...user,
+    ...role,
+    ...content,
+    ...contentTag,
+    ...shopBanner,
+    ...productCategory,
+    ...product,
+    ...coupon,
+    ...order,
+    ...history,
   }),
 };

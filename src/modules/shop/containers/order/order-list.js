@@ -8,6 +8,7 @@ import {
   complete as completeOrderAction,
 } from 'shared/entities/actions/order';
 import Stats from 'shared/components/stats';
+import Layout from 'shared/containers/layout';
 import selector from './order-list-selector';
 import List from '../../components/order-list';
 
@@ -24,7 +25,7 @@ export default compose(
       completeOrder({ id }).then(() => Message.success('Complete order success!')),
   }),
 )(({ orders, closeOrder, completeOrder, statsItems }) => (
-  <div>
+  <Layout>
     <Stats items={statsItems} />
 
     <List
@@ -32,5 +33,5 @@ export default compose(
       completeOrder={completeOrder}
       closeOrder={closeOrder}
     />
-  </div>
+  </Layout>
 ));

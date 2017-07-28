@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
 import { compose, setDisplayName, withHandlers } from 'recompose';
-import { push as pushAction } from 'shared/history';
+import { push as pushAction } from 'shared/entities/actions/history';
 import Layout from 'shared/containers/layout';
 
 import { create as createUserAction } from 'shared/entities/actions/user';

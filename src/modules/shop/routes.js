@@ -14,9 +14,9 @@ import OrderEditor from './containers/order/order-editor';
 
 export default {
   path: '/shop',
-  childRoutes: [{
+  children: [{
     path: '/banner',
-    childRoutes: [{
+    children: [{
       path: '/create',
       component: ShopBannerCreator,
     }, {
@@ -31,7 +31,7 @@ export default {
     component: CategoryList,
   }, {
     path: '/product',
-    childRoutes: [{
+    children: [{
       path: '/list',
       component: ProductList,
     }, {
@@ -43,7 +43,7 @@ export default {
     }],
   }, {
     path: '/coupon',
-    childRoutes: [{
+    children: [{
       path: '/list',
       component: CouponList,
     }, {
@@ -55,7 +55,7 @@ export default {
     }],
   }, {
     path: '/order',
-    childRoutes: [{
+    children: [{
       path: '/list',
       component: OrderList,
     }, {

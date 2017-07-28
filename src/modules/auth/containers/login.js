@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { push as pushAction } from 'shared/history';
+import { push as pushAction } from 'shared/entities/actions/history';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { Message } from 'antd';
 

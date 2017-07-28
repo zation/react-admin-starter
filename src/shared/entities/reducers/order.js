@@ -1,6 +1,6 @@
 import merge from '../merge';
 import { order } from '../schema';
-import { handleActions } from '../../utils/redux-actions';
+import { handleActions, combineActions } from '../../utils/redux-actions';
 import {
   READ_ALL,
   UPDATE,
@@ -8,10 +8,9 @@ import {
   COMPLETE,
 } from '../actions/order';
 
-export default handleActions({
-  [READ_ALL]: merge(order),
-  [UPDATE]: merge(order),
-  [CLOSE]: merge(order),
-  [COMPLETE]: merge(order),
+export default {
+  order: handleActions({
+    [combineActions(READ_ALL, UPDATE, CLOSE, COMPLETE)]: merge(order),
 
-}, {});
+  }, {}),
+};

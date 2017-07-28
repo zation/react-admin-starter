@@ -1,7 +1,7 @@
 import { Message } from 'antd';
 import { map, prop } from 'lodash/fp';
 
-import { push } from '../history';
+import { push } from '../entities/actions/history';
 import { THROW_SERVER_ERROR } from '../entities/actions/server-error';
 
 export default ({ dispatch }) => next => action => {

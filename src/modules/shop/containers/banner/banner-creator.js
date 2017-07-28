@@ -3,11 +3,12 @@ import { setDisplayName, compose, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Button, Message } from 'antd';
 import Link from 'shared/components/link';
-import { push as pushAction } from 'shared/history';
+import { push as pushAction } from 'shared/entities/actions/history';
 
 import {
   updateAll as updateAllBannersAction,
 } from 'shared/entities/actions/shop-banner';
+import Layout from 'shared/containers/layout';
 import Form from '../../components/banner-form';
 
 import selector from './banner-creator-selector';
@@ -31,7 +32,7 @@ export default compose(
       }),
   }),
 )(({ create }) => (
-  <div>
+  <Layout>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
       <Link to="/shop/banner/create">Create</Link>
     </Button>
@@ -40,5 +41,5 @@ export default compose(
       onSubmit={create}
       listLink="/shop/banner/list"
     />
-  </div>
+  </Layout>
 ));

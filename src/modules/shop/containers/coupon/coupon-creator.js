@@ -2,11 +2,12 @@ import React from 'react';
 import { compose, setDisplayName, withHandlers } from 'recompose';
 import { connect } from 'react-redux';
 import { Message } from 'antd';
-import { push as pushAction } from 'shared/history';
+import { push as pushAction } from 'shared/entities/actions/history';
 
 import {
   create as createCouponAction,
 } from 'shared/entities/actions/coupon';
+import Layout from 'shared/containers/layout';
 import selector from './coupon-creator-selector';
 import Form from '../../components/coupon-form';
 
@@ -28,11 +29,11 @@ export default compose(
       }),
   }),
 )(({ type, name, createCoupon }) => (
-  <div>
+  <Layout>
     <Form
       type={type}
       name={name}
       onSubmit={createCoupon}
     />
-  </div>
+  </Layout>
 ));

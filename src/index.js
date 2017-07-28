@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import createBrowserHistory from 'history/createBrowserHistory';
 import qs from 'qs';
 
+import { init } from 'shared/entities/actions/history';
 import router from './router';
 import createStore from './create-store';
 import Root from './root';
@@ -39,6 +40,7 @@ const render = async (location) => {
   );
 };
 
+store.dispatch(init(currentLocation));
 render(currentLocation);
 history.listen(render);
 

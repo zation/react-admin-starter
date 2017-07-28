@@ -8,6 +8,7 @@ import { map, flow, reject, propEq } from 'lodash/fp';
 import {
   updateAll as updateAllBannersAction,
 } from 'shared/entities/actions/shop-banner';
+import Layout from 'shared/containers/layout';
 import List from '../../components/banner-list';
 
 import selector from './banner-list-selector';
@@ -50,7 +51,7 @@ export default compose(
       )(banners)),
   }),
 )(({ banners, forward, backward, remove }) => (
-  <div>
+  <Layout>
     <Button type="primary" style={{ marginBottom: 10 }} size="large">
       <Link to="/shop/banner/create">Create</Link>
     </Button>
@@ -62,5 +63,5 @@ export default compose(
       remove={remove}
       editLink="/shop/banner/edit"
     />
-  </div>
+  </Layout>
 ));

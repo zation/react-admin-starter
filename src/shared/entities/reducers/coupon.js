@@ -1,5 +1,5 @@
 import merge from '../merge';
-import { handleActions } from '../../utils/redux-actions';
+import { handleActions, combineActions } from '../../utils/redux-actions';
 import {
   READ_ALL,
   CREATE,
@@ -10,23 +10,16 @@ import {
 } from '../actions/coupon';
 import { coupon } from '../schema';
 
-export default handleActions({
-  [READ_ALL]: merge(coupon),
+export default {
+  coupon: handleActions({
+    [combineActions(READ_ALL, CREATE, UPDATE, ACTIVATE, DEACTIVATE)]: merge(coupon),
 
-  [CREATE]: merge(coupon),
-
-  [UPDATE]: merge(coupon),
-
-  [ACTIVATE]: merge(coupon),
-
-  [DEACTIVATE]: merge(coupon),
-
-  [READ_USER_HISTORY]: (originalCoupon, { payload, meta: { id } }) => ({
-    ...originalCoupon,
-    [id]: {
-      ...originalCoupon[id],
-      history: payload,
-    },
-  }),
-
-}, {});
+    [READ_USER_HISTORY]: (originalCoupon, { payload, meta: { id } }) => ({
+      ...originalCoupon,
+      [id]: {
+        ...originalCoupon[id],
+        history: payload,
+      },
+    }),
+  }, {}),
+};

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { propEq, omit } from 'lodash/fp';
 import { connect } from 'react-redux';
 import { compose, setDisplayName, setPropTypes, withHandlers } from 'recompose';
-import { push as pushAction } from '../history';
+import { push as pushAction } from '../entities/actions/history';
 
 const isLeftClickEvent = propEq('button', 0);
 

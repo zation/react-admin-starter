@@ -1,6 +1,6 @@
 import merge from '../merge';
 import remove from '../remove';
-import { handleActions } from '../../utils/redux-actions';
+import { handleActions, combineActions } from '../../utils/redux-actions';
 import {
   READ_ALL,
   REMOVE,
@@ -9,13 +9,11 @@ import {
 } from '../actions/role';
 import { role } from '../schema';
 
-export default handleActions({
-  [READ_ALL]: merge(role),
+export default {
+  role: handleActions({
+    [combineActions(READ_ALL, CREATE, UPDATE)]: merge(role),
 
-  [CREATE]: merge(role),
+    [REMOVE]: remove(role),
 
-  [UPDATE]: merge(role),
-
-  [REMOVE]: remove(role),
-
-}, {});
+  }, {}),
+};
