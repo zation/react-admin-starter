@@ -4,8 +4,11 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import createBrowserHistory from 'history/createBrowserHistory';
 import qs from 'qs';
+import cookie from 'js-cookie';
 
-import { init } from 'shared/entities/actions/history';
+import authorizationCookieName from 'shared/constants/authorization-cookie-name';
+import { init as initHistory } from 'shared/entities/actions/history';
+import { init as initAuth } from 'shared/entities/actions/auth';
 import router from './router';
 import createStore from './create-store';
 import Root from './root';
@@ -40,7 +43,8 @@ const render = async (location) => {
   );
 };
 
-store.dispatch(init(currentLocation));
+store.dispatch(initHistory(currentLocation));
+store.dispatch(initAuth(cookie.get(authorizationCookieName)));
 render(currentLocation);
 history.listen(render);
 

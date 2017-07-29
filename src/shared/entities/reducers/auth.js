@@ -1,25 +1,18 @@
-import cookie from 'js-cookie';
-
-import authorizationCookieName from '../../constants/authorization-cookie-name';
 import { ACTIVE } from '../../constants/user-status';
-import { handleActions } from '../../utils/redux-actions';
+import { handleActions, combineActions } from '../../utils/redux-actions';
 import { REGISTER, READ_MINE } from '../actions/user';
-import { LOGIN, LOGOUT } from '../actions/auth';
+import { LOGIN, LOGOUT, INIT } from '../actions/auth';
 
 export default {
   auth: handleActions({
-    [REGISTER]: (auth, { payload }) => {
-      cookie.set(authorizationCookieName, payload.authorization);
-      return {
-        isLogin: true,
-        authorization: payload.authorization,
-        currentUserId: payload.id,
-      };
-    },
+    [INIT]: (auth, { payload }) => ({
+      authorization: payload,
+    }),
 
-    [LOGIN]: (auth, { payload: { user: { id, status }, authorization } }) => {
+    [combineActions(REGISTER, LOGIN)]: (auth, {
+      payload: { user: { id, status }, authorization },
+    }) => {
       if (status === ACTIVE) {
-        cookie.set(authorizationCookieName, authorization);
         return {
           isLogin: true,
           authorization,
@@ -35,14 +28,19 @@ export default {
       currentUserId: null,
     }),
 
-    [READ_MINE]: (auth, { payload }) => ({
-      ...auth,
-      isLogin: true,
-      currentUserId: payload.id,
-    }),
+    [READ_MINE]: (auth, { payload: { id, status } }) => {
+      if (status === ACTIVE) {
+        return {
+          ...auth,
+          isLogin: true,
+          currentUserId: id,
+        };
+      }
+      return auth;
+    },
 
   }, {
-    authorization: global.document ? cookie.get(authorizationCookieName) || '' : '',
+    authorization: null,
     isLogin: false,
     currentUserId: null,
   }),

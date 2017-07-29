@@ -6,6 +6,9 @@ import { post } from '../request';
 const actionType = actionTypeCreator(__filename);
 export const LOGIN = actionType('LOGIN');
 export const LOGOUT = actionType('LOGOUT');
+export const INIT = actionType('INIT');
+
+export const init = createAction(INIT);
 
 export const login = createAction(
   LOGIN,

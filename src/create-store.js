@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import fetch from 'shared/middlewares/fetch';
 import handleServerError from 'shared/middlewares/handle-server-error';
 import handleHistory from 'shared/middlewares/handle-history';
+import handleAuthorization from 'shared/middlewares/handle-authorization';
 import reducers from './reducers';
 
 const { __REDUX_DEVTOOLS_EXTENSION__ } = global;
@@ -12,6 +13,7 @@ export default ({ history }) => {
     handleHistory(history),
     fetch,
     handleServerError,
+    handleAuthorization,
   ];
 
   // eslint-disable-next-line no-undef
