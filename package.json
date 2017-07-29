@@ -14,6 +14,12 @@
     "public": "rm -rf public && mkdir public && cp src/favicon.ico public/",
     "mocker": "BABEL_ENV=mocker nodemon --watch ./mocker ./mocker/index.js --exec babel-node"
   },
+  "browserslist": [
+    ">1%",
+    "last 4 versions",
+    "Firefox ESR",
+    "not ie < 9"
+  ],
   "lint-staged": {
     "*.{cmd,html,json,md,sh,txt,xml,yml}": [
       "editorconfig-tools fix",
