@@ -48,7 +48,7 @@ export default compose(
     </Header>
 
     <Layout>
-      <Sider>
+      <Sider className={style.Sider}>
         <Navigation
           currentOperation={currentOperation}
           currentOperationGroup={currentOperationGroup}
