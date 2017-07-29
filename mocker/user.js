@@ -23,7 +23,7 @@ const getUser = values => ({
     receiverPhone: '18728374829',
     zipCode: '1100100',
   },
-  coupons: map((index) => ({
+  coupons: map(index => ({
     id: random.number(),
     createdAt: date.past(),
     updatedAt: date.past(),

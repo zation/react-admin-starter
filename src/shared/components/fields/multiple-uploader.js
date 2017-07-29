@@ -25,16 +25,16 @@ export default compose(
     accept: PropTypes.string,
   }),
 )(({
-    input: { onChange, value },
-    meta: { touched, error },
-    layout,
-    label,
-    placeholder = '点击上传',
-    style,
-    required,
-    disabled,
-    accept,
-  }) =>
+  input: { onChange, value },
+  meta: { touched, error },
+  layout,
+  label,
+  placeholder = '点击上传',
+  style,
+  required,
+  disabled,
+  accept,
+}) =>
   (
     <Item
       {...layout}

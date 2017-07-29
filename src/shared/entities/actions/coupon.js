@@ -17,14 +17,14 @@ export const readAll = createAction(
 
 export const create = createAction(
   CREATE, ({
-      name,
-      type,
-      discount,
-      condition,
-      inventory,
-      capacity,
-      expiredAt,
-    }) =>
+    name,
+    type,
+    discount,
+    condition,
+    inventory,
+    capacity,
+    expiredAt,
+  }) =>
     post('/coupon', {
       name,
       type,
@@ -39,10 +39,10 @@ export const create = createAction(
 
 export const update = createAction(
   UPDATE, ({
-      id,
-      capacity,
-      expiredAt,
-    }) =>
+    id,
+    capacity,
+    expiredAt,
+  }) =>
     put(`/coupon/${id}`, {
       id,
       capacity,

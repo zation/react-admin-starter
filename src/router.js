@@ -49,10 +49,11 @@ export default new Router([
         dispatch(readAllOrders()),
       ]);
     },
-    children: [{
-      path: '/',
-      component: Profile,
-    },
+    children: [
+      {
+        path: '/',
+        component: Profile,
+      },
       systemRoutes,
       contentRoutes,
       accountRoutes,

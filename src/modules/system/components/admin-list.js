@@ -45,20 +45,20 @@ export default compose(
       key: 'activation',
       render: (status, { id, role }) => (
         role.key !== ADMIN
-        ? (
-          <Switch checked={status === ACTIVE} onChange={toggleUserStatus({ id, status })} />
-        ) : null
+          ? (
+            <Switch checked={status === ACTIVE} onChange={toggleUserStatus({ id, status })} />
+          ) : null
       ),
     }, {
       title: 'Operation',
       key: 'operation',
       render: (value, { id, role }) => (
         role.key !== ADMIN
-        ? (
-          <div>
-            <Link to={`/system/admin/edit/${id}`}>Edit</Link>&nbsp;&nbsp;
-          </div>
-        ) : null
+          ? (
+            <div>
+              <Link to={`/system/admin/edit/${id}`}>Edit</Link>&nbsp;&nbsp;
+            </div>
+          ) : null
       ),
     }],
   })),

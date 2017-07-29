@@ -44,5 +44,6 @@ shopBanner(router);
 app.use(router);
 
 app.listen(9001, () => {
+  // eslint-disable-next-line no-console
   console.log('Mock server is running on port 9001');
 });

@@ -14,7 +14,7 @@ export default ({ history }) => {
     handleServerError,
   ];
 
-// eslint-disable-next-line no-undef
+  // eslint-disable-next-line no-undef
   if (DEBUG) {
     // eslint-disable-next-line global-require
     const { createLogger } = require('redux-logger');

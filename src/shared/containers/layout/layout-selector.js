@@ -25,15 +25,14 @@ export default (state) => {
     flatten,
     find(propEq('link', pathname)),
     prop('key'),
-  )(menu) || find(
-    (operation) => {
+  )(menu) ||
+    find((operation) => {
       if (startsWith('MANAGE')(operation)) {
         const word = flow(toLower, split('_'), last)(operation);
         return (new RegExp(`${word}/(list|edit|view|order|coupon)`)).test(pathname);
       }
       return includes(toLower(operation))(pathname);
-    },
-  )(operations);
+    })(operations);
 
   return {
     currentUser: getCurrentUser(state),
