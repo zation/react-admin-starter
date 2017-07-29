@@ -5,8 +5,8 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 import Link from 'shared/components/link';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { SHIPPING } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import Select from 'shared/components/fields/select';
 import { shippingCompanyOptions } from 'shared/constants/shipping-company';
@@ -27,12 +27,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: SHIPPING,
   }),
-)(({ onSubmit, handleSubmit, submitting }) => (
+)(({ handleSubmit, submitting }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="shippingCompany"

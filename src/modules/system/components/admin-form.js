@@ -5,7 +5,6 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 
 import { ADMIN } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import RadioGroup from 'shared/components/fields/radio-group';
 import PlainText from 'shared/components/fields/plain-text';
@@ -34,9 +33,9 @@ export default compose(
     form: ADMIN,
     enableReinitialize: true,
   }),
-)(({ onSubmit, handleSubmit, submitting, reset, roleOptions, isEdit }) => (
+)(({ handleSubmit, submitting, reset, roleOptions, isEdit }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     {isEdit
       ? (

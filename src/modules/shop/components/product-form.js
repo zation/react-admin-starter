@@ -5,8 +5,8 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 import Link from 'shared/components/link';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { PRODUCT } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import InputNumber from 'shared/components/fields/input-number';
 import RadioGroup from 'shared/components/fields/radio-group';
@@ -33,12 +33,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: PRODUCT,
   }),
-)(({ onSubmit, handleSubmit, submitting, productCategoryOptions }) => (
+)(({ handleSubmit, submitting, productCategoryOptions }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="name"

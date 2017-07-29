@@ -15,10 +15,11 @@ export default compose(
     },
   ),
   withHandlers({
-    updateRole: ({ updateRole, roleId }) => values => updateRole({
-      id: roleId,
-      ...values,
-    }).then(() => Message.info('Edit role success!')),
+    updateRole: ({ updateRole, roleId }) => values =>
+      updateRole({
+        id: roleId,
+        ...values,
+      }).then(() => Message.info('Edit role success!')),
   }),
   setDisplayName(__filename),
 )(({ updateRole, initialValues }) => (

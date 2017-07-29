@@ -5,8 +5,8 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 import Link from 'shared/components/link';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { COUPON } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import PlainText from 'shared/components/fields/plain-text';
 import InputNumber from 'shared/components/fields/input-number';
 import DatePicker from 'shared/components/fields/date-picker';
@@ -33,12 +33,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: COUPON,
   }),
-)(({ onSubmit, handleSubmit, submitting, type, name, code, isEditing }) => (
+)(({ handleSubmit, submitting, type, name, code, isEditing }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <PlainText
       label="Name"

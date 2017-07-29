@@ -13,7 +13,7 @@ import productCategory from './product-category';
 import product from './product';
 import coupon from './coupon';
 import order from './order';
-import shoppingCart from './shopping-cart';
+import shoppingCartRouter from './shopping-cart';
 import shopBanner from './shop-banner';
 
 faker.locale = 'zh_CN';
@@ -39,7 +39,7 @@ productCategory(router);
 product(router);
 coupon(router);
 order(router);
-shoppingCart(router);
+shoppingCartRouter(router);
 shopBanner(router);
 app.use(router);
 

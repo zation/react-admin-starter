@@ -2,6 +2,7 @@ import React from 'react';
 import { compose, setDisplayName } from 'recompose';
 import { connect } from 'react-redux';
 import Layout from 'shared/containers/layout';
+import { reset as resetAction } from 'redux-form';
 
 import {
   remove as removeProductCategoryAction,
@@ -17,14 +18,16 @@ export default compose(
     removeProductCategory: removeProductCategoryAction,
     updateProductCategory: updateProductCategoryAction,
     createProductCategory: createProductCategoryAction,
+    reset: resetAction,
   }),
-)(({ categories, removeProductCategory, updateProductCategory, createProductCategory }) => (
+)(({ categories, removeProductCategory, updateProductCategory, createProductCategory, reset }) => (
   <Layout>
     <List
       categories={categories}
       removeProductCategory={removeProductCategory}
       updateProductCategory={updateProductCategory}
       createProductCategory={createProductCategory}
+      reset={reset}
     />
   </Layout>
 ));

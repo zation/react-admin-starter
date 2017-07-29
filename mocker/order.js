@@ -51,7 +51,7 @@ const getOrder = values => ({
 
 export const orders = map(getOrder)(range(1, 50));
 
-export default router => {
+export default (router) => {
   router.get('/order/all', (request, response) => {
     response.status(200).send(orders);
   });

@@ -5,8 +5,8 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 import Link from 'shared/components/link';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { CONTENT } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import RadioGroup from 'shared/components/fields/radio-group';
 import Select from 'shared/components/fields/select';
@@ -31,12 +31,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: CONTENT,
   }),
-)(({ onSubmit, handleSubmit, submitting, contentTagOptions }) => (
+)(({ handleSubmit, submitting, contentTagOptions }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="title"

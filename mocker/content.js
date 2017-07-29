@@ -43,12 +43,12 @@ const getContent = values => ({
 
 export const contents = map(getContent)(range(1, 40));
 
-export default router => {
+export default (router) => {
   router.get('/content/all', ({ query: { type, isRecommended } }, response) => {
     response.status(200).send(flow(
       type ? filter(propEq('type', type)) : identity,
       isRecommended ? filter(propEq('isRecommended', isRecommended === 'true')) : identity,
-      map((content) => ({
+      map(content => ({
         ...content,
         relatedContentIds: flow(
           map(prop('id')),

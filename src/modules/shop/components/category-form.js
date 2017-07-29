@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import { compose, setDisplayName, setPropTypes, pure } from 'recompose';
 import { Form, Button, Popconfirm } from 'antd';
 
-import submit from 'shared/utils/submit-handler';
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import Input from 'shared/components/fields/input';
 import { required } from 'shared/validations';
 
@@ -15,30 +15,22 @@ export default compose(
   setPropTypes({
     onSubmit: PropTypes.func.isRequired,
     removeProductCategory: PropTypes.func,
-    shouldResetAfterSubmit: PropTypes.bool,
+    isEditing: PropTypes.bool,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm(),
 )(({
-  onSubmit,
   handleSubmit,
   submitting,
   removeProductCategory,
   reset,
   dirty,
   isEditing,
-  shouldResetAfterSubmit,
 }) => (
   <Form
     layout="inline"
-    onSubmit={handleSubmit(submit(values =>
-      onSubmit(values).then((action) => {
-        if (shouldResetAfterSubmit) {
-          reset();
-        }
-        return action;
-      }),
-    ))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="name"

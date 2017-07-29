@@ -14,6 +14,7 @@ export default compose(
     removeProductCategory: PropTypes.func,
     updateProductCategory: PropTypes.func,
     createProductCategory: PropTypes.func,
+    reset: PropTypes.func,
   }),
   withProps(({ removeProductCategory, updateProductCategory }) => ({
     columns: [{
@@ -32,7 +33,7 @@ export default compose(
     }],
 
   })),
-)(({ categories, columns, createProductCategory }) => (
+)(({ categories, columns, createProductCategory, reset }) => (
   <Table
     dataSource={categories}
     columns={columns}
@@ -40,8 +41,8 @@ export default compose(
     footer={() => (
       <Form
         form={`${PRODUCT_CATEGORY}create`}
-        shouldResetAfterSubmit
-        onSubmit={createProductCategory}
+        onSubmit={values => createProductCategory(values)
+          .then(() => reset(`${PRODUCT_CATEGORY}create`))}
       />
     )}
   />

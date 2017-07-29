@@ -7,7 +7,7 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { required, minLength } from 'shared/validations';
 import { LOGIN } from 'shared/constants/form-name';
 import Input from 'shared/components/fields/input';
-import submit from 'shared/utils/submit-handler';
+import handleSubmitError from 'shared/utils/handle-submit-error';
 
 import style from './form.less';
 
@@ -23,12 +23,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: LOGIN,
   }),
-)(({ onSubmit, handleSubmit, reset, submitting }) => (
+)(({ handleSubmit, reset, submitting }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
     className={style.Root}
   >
     <Field

@@ -31,7 +31,7 @@ export const anotherRole = {
 
 const roles = [admin, customer, oneRole, anotherRole];
 
-export default router => {
+export default (router) => {
   router.get('/role/all', (request, response) => {
     response.status(200).send(roles);
   });

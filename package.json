@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "npm run lint",
-    "lint": "eslint ./src",
+    "lint": "eslint ./src ./mocker ./config",
     "build": "npm run public && NODE_ENV=production webpack && node ./html.js",
     "start": "npm run public && cp src/index.html public/ && webpack-dev-server --open",
     "public": "rm -rf public && mkdir public && cp src/favicon.ico public/",
@@ -31,7 +31,7 @@
     "recompose": "0.23.5",
     "redux": "3.7.0",
     "redux-actions": "1.2.2",
-    "redux-form": "6.8.0",
+    "redux-form": "7.0.3",
     "universal-router": "^3.2.0",
     "whatwg-fetch": "2.0.3"
   },

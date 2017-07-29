@@ -39,7 +39,7 @@ export const users = flow(
   concat(currentUser),
 )(range(1, 40));
 
-export default router => {
+export default (router) => {
   router.get('/user/mine', (request, response) => {
     response.status(200).send(currentUser);
   });

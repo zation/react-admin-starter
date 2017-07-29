@@ -5,8 +5,8 @@ import { compose, setDisplayName, setPropTypes, pure } from 'recompose';
 import { Form, Button } from 'antd';
 import Link from 'shared/components/link';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { BANNER } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import Select from 'shared/components/fields/select';
 import SingleUploader from 'shared/components/fields/single-uploader';
@@ -30,12 +30,13 @@ export default compose(
     listLink: PropTypes.string.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: BANNER,
   }),
-)(({ onSubmit, listLink, handleSubmit, submitting }) => (
+)(({ listLink, handleSubmit, submitting }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="image"

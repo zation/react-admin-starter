@@ -17,7 +17,7 @@ export const shoppingCart = {
   total: sumBy(({ product: { price }, quantity }) => price * quantity)(items),
 };
 
-export default router => {
+export default (router) => {
   router.get('/shopping-cart/mine', (request, response) => {
     response.status(200).send(shoppingCart);
   });

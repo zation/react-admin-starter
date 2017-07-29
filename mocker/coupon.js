@@ -5,7 +5,7 @@ import { FIXED, PERCENTAGE } from '../src/shared/constants/coupon-type';
 import { couponStatuses, INACTIVE, ACTIVE } from '../src/shared/constants/coupon-status';
 import { couponAvailabilities } from '../src/shared/constants/coupon-availability';
 
-const getCoupon = values => {
+const getCoupon = (values) => {
   const type = random.arrayElement([FIXED, PERCENTAGE]);
   const inventory = random.number();
 
@@ -27,7 +27,7 @@ const getCoupon = values => {
 
 export const coupons = map(getCoupon)(range(1, 50));
 
-export default router => {
+export default (router) => {
   router.get('/coupon/all', (request, response) => {
     response.status(200).send(coupons);
   });

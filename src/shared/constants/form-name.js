@@ -7,6 +7,7 @@ export const PROFILE = 'PROFILE';
 export const PASSWORD = 'PASSWORD';
 export const BANNER = 'BANNER';
 export const PRODUCT_CATEGORY = 'PRODUCT_CATEGORY';
+export const PRODUCT_CATEGORY_CREATE = 'PRODUCT_CATEGORY_CREATE';
 export const PRODUCT = 'PRODUCT';
 export const COUPON = 'COUPON';
 export const SHIPPING = 'SHIPPING';

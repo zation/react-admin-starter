@@ -9,7 +9,7 @@ const getProductCategory = values => ({
 
 export const productCategories = map(getProductCategory)(range(1, 5));
 
-export default router => {
+export default (router) => {
   router.get('/product-category/all', (request, response) => {
     response.status(200).send(productCategories);
   });

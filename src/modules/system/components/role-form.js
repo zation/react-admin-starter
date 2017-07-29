@@ -5,7 +5,6 @@ import { compose, setDisplayName, setPropTypes } from 'recompose';
 import { Form, Button } from 'antd';
 
 import { ROLE } from 'shared/constants/form-name';
-import submit from 'shared/utils/submit-handler';
 import Input from 'shared/components/fields/input';
 import Select from 'shared/components/fields/select';
 import { required } from 'shared/validations';
@@ -32,9 +31,9 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
-)(({ onSubmit, handleSubmit, submitting, reset }) => (
+)(({ handleSubmit, submitting, reset }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="name"

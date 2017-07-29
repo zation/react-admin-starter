@@ -11,7 +11,7 @@ const getBanner = values => ({
 
 export const banners = map(order => getBanner({ order }))(range(1, 5));
 
-export default router => {
+export default (router) => {
   router.get('/shop/banner/all', (request, response) => {
     response.status(200).send(banners);
   });

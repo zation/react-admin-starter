@@ -29,14 +29,14 @@ const handleSuccess = (dispatch, action) => response =>
 const handleFailed = (dispatch, { meta }) => response =>
   deserialize(response)
     .then((data) => {
-      dispatch(throwServerError({
-        errors: data,
-      }, {
-        status: response.status,
-        statusText: response.statusText,
-        ignoreGlobalWarning: prop('ignoreGlobalWarning')(meta),
-        ignoreAuthRedirection: prop('ignoreAuthRedirection')(meta),
-      }));
+      dispatch(throwServerError(
+        data,
+        {
+          status: response.status,
+          statusText: response.statusText,
+          ignoreGlobalWarning: prop('ignoreGlobalWarning')(meta),
+          ignoreAuthRedirection: prop('ignoreAuthRedirection')(meta),
+        }));
       throw data;
     });
 

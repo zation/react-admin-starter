@@ -4,7 +4,7 @@ import { range, map, propEq, find, replace } from 'lodash/fp';
 import { productCategories } from './product-category';
 import { productStatuses } from '../src/shared/constants/product-status';
 
-const getProduct = values => {
+const getProduct = (values) => {
   const originalPrice = Number(finance.amount());
   const price = originalPrice - Number(finance.amount());
 
@@ -27,7 +27,7 @@ const getProduct = values => {
 
 export const products = map(getProduct)(range(1, 100));
 
-export default router => {
+export default (router) => {
   router.get('/product/all', (request, response) => {
     response.status(200).send(products);
   });

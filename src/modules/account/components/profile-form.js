@@ -4,11 +4,11 @@ import { Field, reduxForm } from 'redux-form';
 import { Form, Button } from 'antd';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
 
+import handleSubmitError from 'shared/utils/handle-submit-error';
 import { required } from 'shared/validations';
 import { PROFILE } from 'shared/constants/form-name';
 import Input from 'shared/components/fields/input';
 import RadioGroup from 'shared/components/fields/radio-group';
-import submit from 'shared/utils/submit-handler';
 import { genderOptions } from 'shared/constants/gender';
 
 const { Item } = Form;
@@ -23,12 +23,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: PROFILE,
   }),
-)(({ onSubmit, handleSubmit, submitting }) => (
+)(({ handleSubmit, submitting }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="nickname"

@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { Form, Button } from 'antd';
+import { Button, Form } from 'antd';
 import { compose, setDisplayName, setPropTypes } from 'recompose';
+import handleSubmitError from 'shared/utils/handle-submit-error';
 
 import { required, samePasswordAs } from 'shared/validations';
 import { PASSWORD } from 'shared/constants/form-name';
 import Input from 'shared/components/fields/input';
-import submit from 'shared/utils/submit-handler';
 
 const { Item } = Form;
 
@@ -21,12 +21,13 @@ export default compose(
     onSubmit: PropTypes.func.isRequired,
   }),
   setDisplayName(__filename),
+  handleSubmitError,
   reduxForm({
     form: PASSWORD,
   }),
-)(({ onSubmit, handleSubmit, submitting }) => (
+)(({ handleSubmit, submitting }) => (
   <Form
-    onSubmit={handleSubmit(submit(onSubmit))}
+    onSubmit={handleSubmit}
   >
     <Field
       name="oldPassword"
