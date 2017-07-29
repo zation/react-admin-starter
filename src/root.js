@@ -6,7 +6,6 @@ import { LocaleProvider } from 'antd';
 import enUS from 'antd/lib/locale-provider/en_US';
 
 import './antd_.less';
-import './index_.less';
 
 export default compose(
   setPropTypes({

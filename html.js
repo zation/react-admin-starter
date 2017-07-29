@@ -8,5 +8,6 @@ const vendorFile = fs.readFileSync('./public/__built__/vendor.js');
 fs.writeFileSync(
   './public/index.html',
   html.replace('{{appCacheBuster}}', md5(appFile))
+    // eslint-disable-next-line comma-dangle
     .replace('{{vendorCacheBuster}}', md5(vendorFile))
 );
